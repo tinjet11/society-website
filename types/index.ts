@@ -10,3 +10,10 @@ export interface userProps {
         bs: string
     }
 }
+
+export interface blogCardProps{
+    title: string,
+    subtitle:string,
+    date: string,
+    image: string,
+}

@@ -1,6 +1,8 @@
- "use client";
+"use client";
 
-import Nav from "@/components/Nav";
+import Blog from "@/components/Blog";
+import NavHorizontal from "@/components/NavHorizontal";
+import NavVertical from "@/components/NavVertical";
 import { useEffect, useState } from "react";
 
 export default function Home({ }: { users: userProps[] }) {
@@ -26,19 +28,14 @@ export default function Home({ }: { users: userProps[] }) {
 
   return (
     <>
-    <Nav/>
-    <div className="">
-      <h2>Users</h2>
-      <ul>
-      {/*   {userList.map((user) => (
-          <li key={user.id}>
-            {user.id} - {user.name}
-            <br />
-            {user.website}
-          </li>
-        ))} */}
-      </ul>
-    </div>
+
+      <NavVertical />
+
+        <NavHorizontal />
+
+        <div className="lg:ml-[250px]">
+        <Blog />
+        </div>
     </>
   );
 }
@@ -48,4 +45,3 @@ export interface userProps {
   name: string;
   website: string;
 }
- 

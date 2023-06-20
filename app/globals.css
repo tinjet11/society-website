@@ -7,9 +7,38 @@ body {
 }
 
 .nav-item{
-  @apply  ml-0 p-2 m-1 text-center flex gap-5 border-solid hover:border-l-4 w-full sm:justify-normal justify-center
+  @apply  ml-0 p-2 mt-4 text-center flex gap-5 border-solid hover:border-l-4 w-full sm:justify-normal justify-center
 }
 
 .nav-text{
-  @apply hidden sm:block
+  @apply hidden sm:block text-white
+}
+
+.primary-color{
+
+}
+
+.secondary-color{
+  @apply bg-[#827EAC]
+}
+
+
+.container{
+  max-width: 1140px; /* Adjust the maximum width as per your design */
+  margin-left: auto;
+  margin-right: 100px;
+  padding-left: 15px; /* Adjust the padding as per your design */
+  padding-right: 15px; /* Adjust the padding as per your design */
+}
+
+.small-nav{
+ 
+}
+
+.big-nav{
+  @apply hidden lg:block h-full sm:w-[200px] left-0 top-0 flex flex-col bg-[#4A4772] gap-5 p-3 pl-0
+}
+
+.nav_right_item{
+  @apply flex flex-row ml-auto gap-4 mr-2 p-2
 }
