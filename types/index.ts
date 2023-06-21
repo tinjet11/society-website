@@ -17,3 +17,15 @@ export interface blogCardProps{
     date: string,
     image: string,
 }
+
+export interface positionCardProps{
+    title:string,
+    description:string
+}
+
+export interface committeeCardProps{
+    title:string,
+    image:string,
+    name:string,
+    email:string,
+}

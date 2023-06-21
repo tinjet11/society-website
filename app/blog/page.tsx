@@ -1,5 +1,5 @@
-import { NavVertical, Position,NavHorizontal } from "@/components";
 
+import { NavVertical, Blog,NavHorizontal } from "@/components";
 
 export default function Home() {
 
@@ -11,7 +11,7 @@ export default function Home() {
         <NavHorizontal />
 
         <div className="lg:ml-[250px]">
-        <Position />
+        <Blog />
         </div>
     </>
   );

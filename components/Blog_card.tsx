@@ -1,10 +1,10 @@
-import { blogCardProps } from '@/types'
-import Image from 'next/image'
-import React from 'react'
+import { blogCardProps } from '@/types';
+import Image from 'next/image';
+import React from 'react';
 
-const Blog_card = ({ title, subtitle, date, image }: blogCardProps) => {
+const BlogCard = ({ title, subtitle, date, image }: blogCardProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="bg-white rounded-lg shadow-md p-4 hover:bg-indigo-300">
       <div className="flex justify-center">
         <Image
           src={`${image}`}
@@ -15,20 +15,19 @@ const Blog_card = ({ title, subtitle, date, image }: blogCardProps) => {
         />
       </div>
 
-      <div className="text-center mt-4">
-        <p className="text-xl font-bold">{title}</p>
+      <div className="text-start mt-4">
+        <p className="text-xl font-bold text-gray-800">{title}</p>
       </div>
 
-      <div className="text-center mt-2">
-        <p>{subtitle}</p>
+      <div className="text-start mt-2 ml-2">
+        <p className="text-gray-600">{subtitle}</p>
       </div>
 
-      <div className="mt-auto text-right text-xs font-light">
+      <div className="mt-auto text-right text-xs font-light text-gray-400">
         <p>Posted on {date}</p>
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Blog_card
+export default BlogCard;

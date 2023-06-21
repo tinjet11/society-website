@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Nav() {
+export default function NavVertical() {
     return (
         <div className="hidden lg:block h-full lg:w-[200px] left-0 top-0 flex flex-col bg-[#4A4772] gap-5 p-3 pl-0 fixed">
             <div className='flex flex-row sm:justify-center justify-center pl-1 mb-2'>
@@ -14,9 +14,9 @@ export default function Nav() {
                 />
             </div>
 
-            <div className='nav-item'>
-            <Link href={'/'}>
-           
+            <Link href={'/about-us'}>
+
+                <div className='nav-item'>
                     <Image
                         src={'/nav/about-us.svg'}
                         alt={'about us'}
@@ -24,13 +24,13 @@ export default function Nav() {
                         height={20}
                         className='object-contain'
                     />
-                   
+                    <p className='nav-text'>About us</p>
+                </div>
             </Link>
-            <p className='nav-text'>About us</p>
-            </div>
-            <div className='nav-item'>
-            <Link href={'/'}>
-          
+
+
+            <Link href={'/events'}>
+                <div className='nav-item'>
                     <Image
                         src={'/nav/events.svg'}
                         alt={'events'}
@@ -38,11 +38,12 @@ export default function Nav() {
                         height={20}
                         className='object-contain justify-center'
                     />
+                    <p className='nav-text'>Events</p>
+                </div>
             </Link>
-            <p className='nav-text'>Events</p>
-            </div>
 
-            <Link href={'/'}>
+
+            <Link href={'/blog'}>
                 <div className='nav-item'>
                     <Image
                         src={'/nav/blog.svg'}
@@ -51,11 +52,11 @@ export default function Nav() {
                         height={20}
                         className='object-contain justify-center'
                     />
-                     <p className='nav-text'>Blog</p>
+                    <p className='nav-text'>Blog</p>
                 </div>
             </Link>
 
-            <Link href={'/'}>
+            <Link href={'/resources'}>
                 <div className='nav-item'>
                     <Image
                         src={'/nav/resources.svg'}
@@ -67,7 +68,7 @@ export default function Nav() {
                     <p className='nav-text'>Resource</p>
                 </div>
             </Link>
-            <Link href={'/'}>
+            <Link href={'/contact-us'}>
                 <div className='nav-item'>
                     <Image
                         src={'/nav/contact-us.svg'}

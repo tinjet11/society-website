@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#FFFFFF]
+  @apply bg-white
 }
 
 .nav-item{
