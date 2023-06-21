@@ -2,6 +2,7 @@ import React from 'react'
 import Committee_card from './Committee_card'
 
 const Committee = () => {
+    
     return (
         <div className='container'>
         <div className='flex flex-col m-2 bg-white rounded-lg shadow-lg p-4'>
@@ -10,8 +11,7 @@ const Committee = () => {
 
                     <hr />
 
-                    <div className="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-4 mt-10">
-
+                    <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
                         <Committee_card
                             title={'President'}
                             image={'nav/logo.svg'}

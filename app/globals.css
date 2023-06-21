@@ -26,7 +26,7 @@ body {
 .container{
   max-width: 1140px; /* Adjust the maximum width as per your design */
   margin-left: auto;
-  margin-right: 100px;
+  margin-right: auto;
   padding-left: 15px; /* Adjust the padding as per your design */
   padding-right: 15px; /* Adjust the padding as per your design */
 }
@@ -42,3 +42,4 @@ body {
 .nav_right_item{
   @apply flex flex-row ml-auto gap-4 mr-2 p-2
 }
+

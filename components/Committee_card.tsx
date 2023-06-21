@@ -1,6 +1,7 @@
 import { committeeCardProps } from '@/types'
 import React from 'react'
 import { Icons } from './Icons'
+import Link from 'next/link'
 
 const Committee_card = ({ title, image, name, email }: committeeCardProps) => {
     return (
@@ -13,10 +14,11 @@ const Committee_card = ({ title, image, name, email }: committeeCardProps) => {
 
             <div>
                 <p className="text-lg font-semibold p-2">{name}</p>
-                <div className='flex flex-row gap-2 p-2'>
+                <div className='flex flex-row gap-2 p-2 overflow-auto'>
                     <div><Icons.mail/></div>
-                    <div><p className="text-gray-600">{email}</p></div>
-               
+                    <div>
+                    <Link className="text-gray-600 underline" href={`mailto:${email}`}>{email}</Link>
+                    </div>
                 </div>
              
             </div>
