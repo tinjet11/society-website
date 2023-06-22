@@ -2,9 +2,10 @@ import { blogCardProps } from '@/types';
 import Image from 'next/image';
 import React from 'react';
 
-const BlogCard = ({ title, subtitle, date, image, key }: blogCardProps) => {
+const BlogCard = ({ title, subtitle, date, image }: blogCardProps) => {
   return (
-    <div key={key} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+    <>
+   {/* <div  className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col"> */}
       <div className="flex justify-center">
         <Image
           src={`${image}`}
@@ -23,7 +24,8 @@ const BlogCard = ({ title, subtitle, date, image, key }: blogCardProps) => {
       <div className="mt-4 text-right text-xs font-light text-gray-400">
         <p>Posted on {date}</p>
       </div>
-    </div>
+    {/* //</div> */}
+    </>
   );
 };
 

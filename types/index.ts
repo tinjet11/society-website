@@ -16,7 +16,7 @@ export interface blogCardProps{
     subtitle:string,
     date: string,
     image: string,
-    key: number
+
 }
 
 export interface positionCardProps{

@@ -55,9 +55,9 @@ const App = () => {
                         const pageArray = Array.isArray(page) ? page : [page];
                         if (i === _posts.length - 1)
                             return (pageArray.map((post, index) => (
-                                <div ref={ref}>
+                              //  <div ref={ref} key={index}>
+                                       <div ref={ref} key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
                                     <Blog_card
-                                      key={index}
                                         title={post.title}
                                         subtitle={post.subtitle}
                                         date={post.date}
@@ -68,15 +68,14 @@ const App = () => {
                             )))
 
                         return pageArray.map((post, index) => (
-                          
+                            <div  key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
                             <Blog_card
-                                key={index}
                                 title={post.title}
                                 subtitle={post.subtitle}
                                 date={post.date}
                                 image={post.image}
                             />
-                         
+                            </div>
                         ))
                     })}
 
