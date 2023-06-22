@@ -55,8 +55,9 @@ const App = () => {
                         const pageArray = Array.isArray(page) ? page : [page];
                         if (i === _posts.length - 1)
                             return (pageArray.map((post, index) => (
-                                <div ref={ref} key={index}>
+                                <div ref={ref}>
                                     <Blog_card
+                                      key={index}
                                         title={post.title}
                                         subtitle={post.subtitle}
                                         date={post.date}
@@ -67,14 +68,15 @@ const App = () => {
                             )))
 
                         return pageArray.map((post, index) => (
-                            <div key={index}>
+                          
                             <Blog_card
+                                key={index}
                                 title={post.title}
                                 subtitle={post.subtitle}
                                 date={post.date}
                                 image={post.image}
                             />
-                            </div>
+                         
                         ))
                     })}
 
