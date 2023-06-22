@@ -15,7 +15,8 @@ const fetchPost = async (page: number) => {
 };
 
 const App = () => {
-    const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
+    //const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
+        const { data, fetchNextPage } = useInfiniteQuery(
         ['query'],
         async ({ pageParam = 1 }) => {
             const response = await fetchPost(pageParam);
@@ -54,9 +55,8 @@ const App = () => {
                         const pageArray = Array.isArray(page) ? page : [page];
                         if (i === _posts.length - 1)
                             return (pageArray.map((post, index) => (
-                                <div ref={ref}>
+                                <div ref={ref} key={index}>
                                     <Blog_card
-                                        key={index}
                                         title={post.title}
                                         subtitle={post.subtitle}
                                         date={post.date}
@@ -67,13 +67,14 @@ const App = () => {
                             )))
 
                         return pageArray.map((post, index) => (
+                            <div key={index}>
                             <Blog_card
-                                key={index}
                                 title={post.title}
                                 subtitle={post.subtitle}
                                 date={post.date}
                                 image={post.image}
                             />
+                            </div>
                         ))
                     })}
 

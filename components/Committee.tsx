@@ -60,11 +60,6 @@ const Committee = () => {
                             name={'Mithilesh Tew'}
                             email={'publicrelation@unmcss.com'}
                         />
-
-
-
-
-
                     </div>
 
                 </div>

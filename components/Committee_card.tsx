@@ -2,6 +2,8 @@ import { committeeCardProps } from '@/types'
 import React from 'react'
 import { Icons } from './Icons'
 import Link from 'next/link'
+import Image from 'next/image'
+Image
 
 const Committee_card = ({ title, image, name, email }: committeeCardProps) => {
     return (
@@ -9,7 +11,12 @@ const Committee_card = ({ title, image, name, email }: committeeCardProps) => {
             <h2 className="text-indigo-800 font-semibold mb-4 text-center">{title}</h2>
 
             <div className="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
-                <img src={image} alt="CommitteeImage" className="w-full h-full object-cover" />
+                <Image 
+                width={30}
+                height = {30}
+                src={image} 
+                alt="CommitteeImage" 
+                className="w-full h-full object-cover" />
             </div>
 
             <div>
