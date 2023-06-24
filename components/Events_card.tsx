@@ -9,6 +9,7 @@ const Events_card = () => {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     useEffect(() => {
         const target = new Date("12/31/2023 23:59:59");
@@ -36,41 +37,62 @@ const Events_card = () => {
             }
         }, 1000);
 
-        return () => clearInterval(interval);
+        
+
+        return () => {
+            clearInterval(interval);
+        };
     }, []);
+
+    useEffect(() => {
+        const updateWindowDimensions = () => {
+          setIsSmallScreen(window.innerWidth < 768);
+        };
+    
+        updateWindowDimensions(); // Set initial value
+    
+        window.addEventListener("resize", updateWindowDimensions);
+    
+        return () => {
+          window.removeEventListener("resize", updateWindowDimensions);
+        };
+      }, []);
+    
+
+
 
     return (
         <div className='flex flex-col'>
-            
-             <div className="flex justify-center items-center my-4">
+
+            <div className="flex justify-center items-center my-4">
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{days}</span>
                     <span className="text-gray-500 ml-1">
-                    {window.innerWidth < 768 ? `D` : `Days`}
+                        {isSmallScreen ? `D` : `Days`}
                     </span>
                 </div>
                 <span className="mx-1 md:mx-2 text-gray-500">:</span>
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{hours}</span>
                     <span className="text-gray-500 ml-1">
-                    {window.innerWidth < 768 ? `H` : `Hours`}
+                        {isSmallScreen ? `H` : `Hours`}
                     </span>
                 </div>
                 <span className="mx-1 md:mx-2 text-gray-500">:</span>
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{minutes}</span>
                     <span className="text-gray-500 ml-1">
-                    {window.innerWidth < 768 ? `M` : `Minutes`}
+                        {isSmallScreen ? `M` : `Minutes`}
                     </span>
                 </div>
                 <span className="mx-1 md:mx-2 text-gray-500">:</span>
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{seconds}</span>
                     <span className="text-gray-500 ml-1">
-                    {window.innerWidth < 768 ? `S` : `Seconds`}
+                        {isSmallScreen ? `S` : `Seconds`}
                     </span>
                 </div>
-            </div>  
+            </div>
 
             <div className='flex flex-col md:flex-row p-4 justify-evenly'>
                 <div className='w-full md:w-1/2'>
