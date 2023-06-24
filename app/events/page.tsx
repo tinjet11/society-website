@@ -1,5 +1,5 @@
 "use client"
-import { NavVertical, Temp ,NavHorizontal } from "@/components";
+import { NavVertical,NavHorizontal, Events } from "@/components";
 
 export default function Home() {
 
@@ -10,7 +10,7 @@ export default function Home() {
         <NavHorizontal />
 
         <div className="lg:ml-[250px]">
-        <Temp/>
+       <Events/>
         </div>
     </>
   );

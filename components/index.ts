@@ -2,6 +2,7 @@ import Blog from "./Blog"
 import BlogCard from "./Blog_card"
 import Committee from "./Committee"
 import Committee_card from "./Committee_card"
+import Events from "./Events"
 import { Icons } from "./Icons"
 import NavHorizontal from "./NavHorizontal"
 import NavVertical from "./NavVertical"
@@ -10,7 +11,9 @@ import Position_card from "./Position_card"
 import Temp from "./Temp"
 
 
+
 export {
+    Events,
     Temp,
     Position_card,
     Position,
