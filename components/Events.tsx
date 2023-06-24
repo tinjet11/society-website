@@ -16,8 +16,9 @@ const Events = () => {
         <div className='container'>
             <div className='flex flex-col m-2 bg-white rounded-lg shadow-lg p-4'>
                 <h1 className="text-center font-bold text-4xl mb-3">Events</h1>
+                <hr/>
             
-                <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                <Swiper navigation={true} modules={[Navigation]} className="mySwiper mt-2">
                     <SwiperSlide><Events_card/></SwiperSlide>
                     <SwiperSlide><Events_card/></SwiperSlide>
                     <SwiperSlide><Events_card/></SwiperSlide>

@@ -11,7 +11,7 @@ const Events_card = () => {
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
-        const target = new Date("12/31/2024 23:59:59");
+        const target = new Date("12/31/2023 23:59:59");
 
         const interval = setInterval(() => {
             const now = new Date();
