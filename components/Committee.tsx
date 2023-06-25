@@ -14,49 +14,49 @@ const Committee = () => {
                     <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
                         <Committee_card
                             title={'President'}
-                            image={'nav/logo.svg'}
+                            image={'/avatar-boy.svg'}
                             name={'Mirza Hizriyan Nubli Hidayat'}
                             email={'president@unmcss.com'}
                         />
 
                         <Committee_card
                             title={'Vice President'}
-                            image={'nav/logo.svg'}
+                            image={'/avatar-girl.svg'}
                             name={'Carmel Natasha Barnabas'}
                             email={'vicepresident@unmcss.com'}
                         />
 
                         <Committee_card
                             title={'Event Manager'}
-                            image={'nav/logo.svg'}
+                            image={'/avatar-boy.svg'}
                             name={'Rezmana Agung Wibawa'}
                             email={'eventmanager@unmcss.com'}
                         />
 
                         <Committee_card
                             title={'Marketing Director'}
-                            image={'nav/logo.svg'}
+                            image={'/avatar-boy.svg'}
                             name={'Lim En Xuan'}
                             email={'marketingdirector@unmcss.com'}
                         />
 
                         <Committee_card
                             title={'Head of Tech'}
-                            image={'nav/logo.svg'}
+                            image={'/avatar-boy.svg'}
                             name={'Leong Tin Jet'}
                             email={'headoftech@unmcss.com'}
                         />
 
                         <Committee_card
                             title={'Head of Creative Department'}
-                            image={'nav/logo.svg'}
+                            image={'/avatar-girl.svg'}
                             name={'Allysa Amani binti Kamardin'}
                             email={'creativedepartment@unmcss.com'}
                         />
 
                         <Committee_card
                             title={'Public Relations'}
-                            image={'nav/logo.svg'}
+                            image={'/avatar-boy.svg'}
                             name={'Mithilesh Tew'}
                             email={'publicrelation@unmcss.com'}
                         />
