@@ -3,6 +3,7 @@ import React from 'react'
 import Events from './Events'
 import Blog from './Blog'
 import Blog_card from './Blog_card'
+import Button from './Button'
 
 const Hero = () => {
     return (
@@ -16,7 +17,10 @@ const Hero = () => {
                 </div>
                 <div className="flex flex-row gap-4">
                     <div>
-                        <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded">About Us</button>
+                    <Button
+                   text='About Us'
+                   path='/about-us'
+                   />
                     </div>
                 </div>
             </div>
@@ -71,9 +75,10 @@ const Hero = () => {
                     <div className="text-center bg-indigo-200 text-gray-800 p-4 rounded">
                         Love our mission? Become a part of our committee or join as a member!
                     </div>
-                    <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-3 rounded text-sm">
-                        Join Us
-                    </button>
+                   <Button
+                   text='Join Us'
+                   path='/about-us'
+                   />
                 </div>
 
                 <div className="flex flex-row my-8 ">
@@ -126,9 +131,10 @@ const Hero = () => {
                     <div className="text-center bg-indigo-200 text-gray-800 p-4 rounded">
                         Missed out on joining last year? Discover our latest event now!
                     </div>
-                    <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-3 rounded text-sm">
-                        Explore Event
-                    </button>
+                    <Button
+                   text='Explore Events'
+                   path='/events'
+                   />
                 </div>
 
 

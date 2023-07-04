@@ -1,20 +1,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Icons } from './Icons'
 
 export default function NavVertical() {
     return (
         <div className="hidden lg:block h-full lg:w-[200px] left-0 top-0 flex flex-col bg-[#4A4772] gap-5 p-3 pl-0 fixed">
             <div className='flex flex-row sm:justify-center justify-center pl-1 mb-2'>
-            <Link href={'/'}>
-                <Image
-                    src={'/nav/logo.svg'}
-                    alt={'CSS logo'}
-                    width={50}
-                    height={50}
-                    className='object-contain'
-                />
+                <Link href={'/'}>
+                    <Image
+                        src={'/nav/logo.svg'}
+                        alt={'CSS logo'}
+                        width={50}
+                        height={50}
+                        className='object-contain'
+                    />
                 </Link>
             </div>
+
+            <Link href={'/'}>
+
+                <div className='nav-item'>
+                    <Icons.home />
+                    <p className='nav-text'>Home</p>
+                </div>
+            </Link>
 
             <Link href={'/about-us'}>
 

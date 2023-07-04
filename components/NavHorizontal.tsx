@@ -49,6 +49,7 @@ const NavHorizontal = () => {
           {expanded && (
             <div className="fixed top-0 left-0 z-[-1] w-screen h-full bg-gray-700 opacity-95 flex items-center justify-center">
               <ul className="text-indigo-100 text-bold text-3xl p-3">
+              <MenuItem onClick={() => handleClick('/', expanded)}><p className='text-bold text-2xl p-3'>Home</p></MenuItem>
                 <MenuItem onClick={() => handleClick('/about-us', expanded)}><p className='text-bold text-2xl p-3'>About Us</p></MenuItem>
                 <MenuItem onClick={() => handleClick('/events', expanded)}><p className='text-bold text-2xl p-3'>Events</p></MenuItem>
                 <MenuItem onClick={() => handleClick('/blog', expanded)}><p className='text-bold text-2xl p-3'>Blog</p></MenuItem>
