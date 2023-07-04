@@ -44,12 +44,12 @@ const Hero = () => {
                     <div className="flex justify-start my-8">
                         <div className="max-w-lg">
                             <h2 className="text-2xl font-bold mb-4">What We Aim to Achieve</h2>
-                            <p className="text-lg text-gray-600">
+                            <p className="text-lg card-subtitle">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
                                 feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
                                 purus porttitor fringilla.
                             </p>
-                            <p className="text-lg text-gray-600 mt-4">
+                            <p className="text-lg card-subtitle mt-4">
                                 Sed vel iaculis odio. Suspendisse luctus velit auctor ex feugiat, at condimentum urna dictum. Nullam et mi at
                                 est maximus efficitur at vitae neque. Aliquam vitae quam consectetur, finibus tortor nec, elementum nisi.
                             </p>
@@ -58,12 +58,12 @@ const Hero = () => {
                     <div className="flex justify-end my-8 text-end">
                         <div className="max-w-lg">
                             <h2 className="text-2xl font-bold mb-4">What We Aim to Build</h2>
-                            <p className="text-lg text-gray-600">
+                            <p className="text-lg card-subtitle">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
                                 feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
                                 purus porttitor fringilla.
                             </p>
-                            <p className="text-lg text-gray-600 mt-4">
+                            <p className="text-lg card-subtitle mt-4">
                                 Sed vel iaculis odio. Suspendisse luctus velit auctor ex feugiat, at condimentum urna dictum. Nullam et mi at
                                 est maximus efficitur at vitae neque. Aliquam vitae quam consectetur, finibus tortor nec, elementum nisi.
                             </p>
@@ -98,7 +98,7 @@ const Hero = () => {
                 </div>
 
                 <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
-                    <div className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+                    <div className="card-bg rounded-lg shadow-lg p-6 flex flex-col">
                         <Blog_card
                             title="Sample Blog Title"
                             subtitle="Sample Blog Subtitle"
@@ -108,7 +108,7 @@ const Hero = () => {
                         />
                     </div>
 
-                    <div className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+                    <div className="card-bg rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
                         <Blog_card
                             title="Sample Blog Title"
                             subtitle="Sample Blog Subtitle"
@@ -117,7 +117,7 @@ const Hero = () => {
                             btn_txt='See More'
                         />
                     </div>
-                    <div className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+                    <div className="card-bg rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
                         <Blog_card
                             title="Sample Blog Title"
                             subtitle="Sample Blog Subtitle"

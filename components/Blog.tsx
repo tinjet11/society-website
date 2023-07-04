@@ -48,7 +48,7 @@ const App = () => {
     const _posts = data?.pages.flatMap((page) => page);
     return (
         <div className="container">
-            <div className="flex flex-col m-2 bg-white rounded-lg shadow-lg p-4">
+            <div className="flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4">
                 <div className='flex flex-row justify-between m-2 p-2'>
 
                     <div className='flex flex-col basis-1/2 justify-center'>
@@ -73,7 +73,7 @@ const App = () => {
                         if (i === _posts.length - 1)
                             return (pageArray.map((post, index) => (
                                 //  <div ref={ref} key={index}>
-                                <div ref={ref} key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+                                <div ref={ref} key={index} className="card-bg rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
                                     <Blog_card
                                         title={post.title}
                                         subtitle={post.subtitle}
@@ -86,7 +86,7 @@ const App = () => {
                             )))
 
                         return pageArray.map((post, index) => (
-                            <div key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+                            <div key={index} className="card-bg rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
                                 <Blog_card
                                     title={post.title}
                                     subtitle={post.subtitle}

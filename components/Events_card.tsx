@@ -67,28 +67,28 @@ const Events_card = () => {
             <div className="flex justify-center items-center my-4">
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{days}</span>
-                    <span className="text-gray-500 ml-1">
+                    <span className="card-subtitle ml-1">
                         {isSmallScreen ? `D` : `Days`}
                     </span>
                 </div>
-                <span className="mx-1 md:mx-2 text-gray-500">:</span>
+                <span className="mx-1 md:mx-2 card-subtitle">:</span>
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{hours}</span>
-                    <span className="text-gray-500 ml-1">
+                    <span className="card-subtitle ml-1">
                         {isSmallScreen ? `H` : `Hours`}
                     </span>
                 </div>
-                <span className="mx-1 md:mx-2 text-gray-500">:</span>
+                <span className="mx-1 md:mx-2 card-subtitle">:</span>
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{minutes}</span>
-                    <span className="text-gray-500 ml-1">
+                    <span className="card-subtitle ml-1">
                         {isSmallScreen ? `M` : `Minutes`}
                     </span>
                 </div>
-                <span className="mx-1 md:mx-2 text-gray-500">:</span>
+                <span className="mx-1 md:mx-2 card-subtitle">:</span>
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{seconds}</span>
-                    <span className="text-gray-500 ml-1">
+                    <span className="card-subtitle ml-1">
                         {isSmallScreen ? `S` : `Seconds`}
                     </span>
                 </div>

@@ -4,9 +4,9 @@ import Position_card from './Position_card';
 const Position = () => {
     return (
         <div className='container'>
-        <div className='flex flex-col m-2 bg-white rounded-lg shadow-lg p-4'>
+        <div className='flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4'>
                     <h1 className="text-center font-bold text-4xl mb-3">Join Us</h1>
-                    <hr />
+          
 
                     <Position_card
                         title='Human Resources Manager'

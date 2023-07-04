@@ -38,7 +38,7 @@ const Events = () => {
 
     return (
         <div className='container'>
-            <div className='flex flex-col m-2 bg-white rounded-lg shadow-lg p-4'>
+            <div className='flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4'>
                 <div className='flex flex-row justify-between m-2 p-2'>
 
                     <div className='flex flex-col basis-1/2 justify-center'>

@@ -5,11 +5,10 @@ const Committee = () => {
 
     return (
         <div className='container'>
-            <div className='flex flex-col m-2 bg-white rounded-lg shadow-lg p-4'>
+            <div className='flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4'>
 
                 <h1 className="text-center font-bold text-4xl mb-3">Committee</h1>
 
-                <hr />
 
                 <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
                     <Committee_card

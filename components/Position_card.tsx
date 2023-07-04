@@ -4,13 +4,13 @@ import React from 'react'
 const Position_card = ({title,description}:positionCardProps) => {
     return (
 
-        <div className="flex lg:flex-row flex-col justify-between m-4 bg-white rounded-lg shadow-md p-4">
+        <div className="flex lg:flex-row flex-col justify-between m-4 card-bg rounded-lg shadow-md p-4">
             <div className="flex flex-col">
-                <div className="text-indigo-800 font-semibold mb-2">
+                <div className="committee-card-title font-semibold mb-2">
                    {title}
                 </div>
 
-                <div className="text-gray-600">
+                <div className="card-subtitle">
                   {description}
                 </div>
             </div>

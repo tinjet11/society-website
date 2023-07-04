@@ -2,8 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+
+[data-theme="dark"] body {
+  @apply bg-[#363451] text-white
+}
+
+[data-theme="light-grey"] body {
+  background-color: white;
+  color: black;
+}
+
+
+
+[data-theme="dark"] .committee-card-title {
+  @apply text-white
+}
+
+[data-theme="light-grey"] .committee-card-title  {
+  @apply text-indigo-800
+}
+
+
+[data-theme="dark"] .card-bg {
+  @apply bg-[#363451] text-white hover:bg-indigo-900 
+}
+
+[data-theme="light-grey"] .card-bg {
   @apply bg-white
+}
+
+[data-theme="dark"] .card-title {
+  @apply text-white
+}
+
+[data-theme="light-grey"] .card-title {
+  @apply text-gray-800
+}
+
+
+[data-theme="dark"] .card-subtitle {
+  @apply text-white
+}
+
+[data-theme="light-grey"] .card-subtitle {
+  @apply text-gray-600
+}
+
+
+
+
+
+p{
+  @apply text-white
 }
 
 .nav-item{
@@ -14,21 +64,15 @@ body {
   @apply hidden sm:block text-white
 }
 
-.primary-color{
-
+.primary-bg-color{
+  @apply bg-[#363451] 
 }
 
-.secondary-color{
-  @apply bg-[#827EAC]
-}
+
 
 
 .container{
   @apply mx-auto px-4
-}
-
-.small-nav{
- 
 }
 
 .big-nav{

@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <div className="flex items-center justify-center h-full">
-      <div className="text-center text-gray-500 text-xl">
+      <div className="text-center text-gray-600 text-xl">
 
         post:
         {data?.pages.map((page, i) => (

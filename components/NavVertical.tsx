@@ -1,8 +1,13 @@
+"use client";
+
+import { useTheme } from "next-themes";
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icons } from './Icons'
 
 export default function NavVertical() {
+
+    const { theme, setTheme } = useTheme();
     return (
         <div className="hidden lg:block h-full lg:w-[200px] left-0 top-0 flex flex-col bg-[#4A4772] gap-5 p-3 pl-0 fixed">
             <div className='flex flex-row sm:justify-center justify-center pl-1 mb-2'>
@@ -91,6 +96,18 @@ export default function NavVertical() {
                     <p className='nav-text'>Contact Us</p>
                 </div>
             </Link>
+
+            <div className='flex-grow' />
+
+            <div className='nav-item mt-auto    '>
+                {
+                    theme === "light-grey" ?
+                        <Icons.sun /> : <Icons.moon />
+                }
+                <button onClick={() => theme === "light-grey" ? setTheme("dark") : setTheme("light-grey")}>
+                    Theme
+                </button></div>
+
         </div>
     )
 }
