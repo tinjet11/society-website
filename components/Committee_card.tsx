@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 Image
 
-const Committee_card = ({ title, image, name, email }: committeeCardProps) => {
+const Committee_card = ({ title, image, name,study_year, email }: committeeCardProps) => {
     return (
         <div className="bg-white rounded-lg shadow-lg p-4">
             <h2 className="text-indigo-800 font-semibold mb-4 text-center">{title}</h2>
@@ -21,6 +21,7 @@ const Committee_card = ({ title, image, name, email }: committeeCardProps) => {
 
             <div>
                 <p className="text-lg font-semibold p-2">{name}</p>
+                <p className="text-md p-2 ">{study_year}</p>
                 <div className='flex flex-row gap-2 p-2 overflow-auto'>
                     <div><Icons.mail/></div>
                     <div>

@@ -16,6 +16,7 @@ export interface blogCardProps{
     subtitle:string,
     date: string,
     image: string,
+    btn_txt:string
 
 }
 
@@ -28,5 +29,6 @@ export interface committeeCardProps{
     title:string,
     image:string,
     name:string,
+    study_year:string,
     email:string,
 }

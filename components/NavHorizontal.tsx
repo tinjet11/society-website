@@ -6,6 +6,7 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link';
 
 
 
@@ -28,13 +29,15 @@ const NavHorizontal = () => {
 
 
     <div className='flex flex-row p-3 lg:hidden block bg-[#4A4772] sticky top-0 z-20'>
-      {!expanded ?    <Image
-        src={'/nav/logo.svg'}
-        alt={'CSS logo'}
-        width={50}
-        height={50}
-        className='object-contain'
-      /> : ''}
+      {!expanded ?    
+      <Link href={'/'}><Image
+      src={'/nav/logo.svg'}
+      alt={'CSS logo'}
+      width={50}
+      height={50}
+      className='object-contain'
+    /></Link>
+       : ''}
    
       <div className="nav_right_item">
         <div className='flex flex-row items-center gap-1 '>

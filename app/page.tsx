@@ -1,4 +1,5 @@
 import { NavVertical, Position,NavHorizontal } from "@/components";
+import Hero from "@/components/Hero";
 
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
         <NavHorizontal />
 
         <div className="lg:ml-[250px]">
-        <Position />
+        <Hero />
         </div>
     </>
   );

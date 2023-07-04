@@ -62,7 +62,7 @@ const Events_card = () => {
 
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col shadow-lg'>
 
             <div className="flex justify-center items-center my-4">
                 <div className="flex items-center">

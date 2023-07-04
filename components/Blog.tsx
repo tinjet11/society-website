@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from 'react';
 import Blog_card from './Blog_card';
 import { blogData } from '@/constant';
 import { useIntersection } from '@mantine/hooks';
+import Image from 'next/image';
 
 const posts = blogData;
 
@@ -16,7 +17,7 @@ const fetchPost = async (page: number) => {
 
 const App = () => {
     //const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
-        const { data, fetchNextPage } = useInfiniteQuery(
+    const { data, fetchNextPage } = useInfiniteQuery(
         ['query'],
         async ({ pageParam = 1 }) => {
             const response = await fetchPost(pageParam);
@@ -48,33 +49,51 @@ const App = () => {
     return (
         <div className="container">
             <div className="flex flex-col m-2 bg-white rounded-lg shadow-lg p-4">
-                <h1 className="text-center font-bold text-4xl mb-3">Blog</h1>
-                <hr />
+                <div className='flex flex-row justify-between m-2 p-2'>
+
+                    <div className='flex flex-col basis-1/2 justify-center'>
+                        <h1 className="font-bold text-4xl mb-3">Blog</h1>
+                        <h1 className="font-semibold mb-3">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</h1>
+                    </div>
+
+                    <div className='flex justify-center basis-1/2 '>
+                        <Image
+                            src={'/blog.svg'}
+                            alt={'blog'}
+                            width={300}
+                            height={300}
+                            className='object-contain' />
+                    </div>
+
+                </div>
+
                 <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
                     {_posts?.map((page, i) => {
                         const pageArray = Array.isArray(page) ? page : [page];
                         if (i === _posts.length - 1)
                             return (pageArray.map((post, index) => (
-                              //  <div ref={ref} key={index}>
-                                       <div ref={ref} key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+                                //  <div ref={ref} key={index}>
+                                <div ref={ref} key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
                                     <Blog_card
                                         title={post.title}
                                         subtitle={post.subtitle}
                                         date={post.date}
                                         image={post.image}
+                                        btn_txt= 'Read More'
                                     />
                                 </div>
 
                             )))
 
                         return pageArray.map((post, index) => (
-                            <div  key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
-                            <Blog_card
-                                title={post.title}
-                                subtitle={post.subtitle}
-                                date={post.date}
-                                image={post.image}
-                            />
+                            <div key={index} className="bg-gray-100 rounded-lg shadow-lg p-6 hover:bg-indigo-100 flex flex-col">
+                                <Blog_card
+                                    title={post.title}
+                                    subtitle={post.subtitle}
+                                    date={post.date}
+                                    image={post.image}
+                                    btn_txt= 'Read More'
+                                />
                             </div>
                         ))
                     })}
