@@ -16,8 +16,6 @@ const Events = () => {
 
     const [slide, setSlide] = useState(1);
 
-    var screen_width = window.screen.width;
-
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
