@@ -71,7 +71,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-row gap-4 my-8 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 my-8 justify-center">
                     <div className="text-center bg-indigo-200 text-gray-800 p-4 rounded">
                         Love our mission? Become a part of our committee or join as a member!
                     </div>
@@ -127,7 +127,7 @@ const Hero = () => {
                         />
                     </div>
                 </div>
-                <div className="flex flex-row gap-4 my-8 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 my-8 justify-center">
                     <div className="text-center bg-indigo-200 text-gray-800 p-4 rounded">
                         Missed out on joining last year? Discover our latest event now!
                     </div>
