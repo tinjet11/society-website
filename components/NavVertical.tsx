@@ -99,13 +99,13 @@ export default function NavVertical() {
 
             <div className='flex-grow' />
 
-            <div className='nav-item mt-auto    '>
+            <div className='nav-item mt-auto'>
                 {
                     theme === "light-grey" ?
                         <Icons.sun /> : <Icons.moon />
                 }
                 <button onClick={() => theme === "light-grey" ? setTheme("dark") : setTheme("light-grey")}>
-                    Theme
+                <p className='nav-text'>Theme</p>
                 </button></div>
 
         </div>
