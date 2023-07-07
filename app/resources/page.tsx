@@ -1,18 +1,16 @@
-import { NavVertical, Position,NavHorizontal } from "@/components";
-import Hero from "@/components/Hero";
-
+"use client"
+import { NavVertical, Temp ,NavHorizontal } from "@/components";
 
 export default function Home() {
 
   return (
     <>
-
       <NavVertical />
 
         <NavHorizontal />
 
         <div className="lg:ml-[250px]">
-        <Hero />
+        <Temp/>
         </div>
     </>
   );
