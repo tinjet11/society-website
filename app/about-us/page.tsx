@@ -1,19 +1,17 @@
-import { NavVertical, Committee,NavHorizontal, Position } from "@/components";
+import getCommittees from "@/actions/getCommittee";
+import getPositions from "@/actions/getPosition";
+import { NavVertical, NavHorizontal, Position } from "@/components";
+import CommitteePage from "@/components/Committee";
 
+export const revalidate = 0
 
-export default function Home() {
-
+export default async function Home() {
+  const committee = await getCommittees();
+  const position = await getPositions();
   return (
     <>
-
-      <NavVertical />
-
-        <NavHorizontal />
-
-        <div className="lg:ml-[250px]">
-        <Committee/>
-        <Position/>
-        </div>
+        <CommitteePage data={committee} />
+        <Position data={position}/>
     </>
   );
 }

@@ -1,41 +1,34 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Pagination, Navigation } from 'swiper';
-import Events_card from './Events_card';
+import { EventType } from '@/types';
+import EventSwiper from './EventSwiper';
+import getEvents from '@/actions/getEvent';
+import { useState, useEffect } from 'react';
+import { Skeleton } from './ui/skeleton';
+import { Balancer } from 'react-wrap-balancer';
+
+export const revalidate = 0;
 
 const Events = () => {
-
-    const [slide, setSlide] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+    const [event, setEvent] = useState<EventType[]>([]);
 
     useEffect(() => {
-        const handleResize = () => {
-            const screenWidth = window.innerWidth;
-            if (screenWidth > 1140) {
-                setSlide(2);
-            } else {
-                setSlide(1);
-            }
+        const fetchEvents = async () => {
+            setIsLoading(true);
+            const events = await getEvents();
+            setEvent(events);
+            setIsLoading(false);
         };
 
-        handleResize(); // Set initial slide value
-
-        window.addEventListener('resize', handleResize);
-
-        // Cleanup function to remove the event listener
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        fetchEvents();
     }, []);
-
     return (
         <div className='container'>
             <div className='flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4'>
@@ -43,7 +36,12 @@ const Events = () => {
 
                     <div className='flex flex-col basis-1/2 justify-center'>
                         <h1 className="font-bold text-4xl mb-3">Events</h1>
-                        <h1 className="font-semibold mb-3">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</h1>
+                        <h1 className="font-semibold mb-3">
+                            <Balancer>
+                                Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                                aut odit aut fugit, sed quia consequuntur ma
+                            </Balancer>
+                        </h1>
                     </div>
 
                     <div className='flex justify-center basis-1/2 '>
@@ -55,24 +53,17 @@ const Events = () => {
                             className='object-contain' />
                     </div>
 
+
                 </div>
 
 
-                <h1 className="font-bold text-center text-2xl sm:text-4xl mb-3">Events Showcase</h1>
-                <Swiper
-                    spaceBetween={40}
-                    slidesPerView={slide}
-                    pagination={{
-                        dynamicBullets: true,
-                    }}
-                    loop={true}
-                    modules={[Pagination, Navigation]}
-                    className="mySwiper mt-2">
-                    <SwiperSlide><Events_card /></SwiperSlide>
-                    <SwiperSlide><Events_card /></SwiperSlide>
-                    <SwiperSlide><Events_card /></SwiperSlide>
-                </Swiper>
+                <h1 className="font-bold text-center text-2xl sm:text-4xl mb-3">Upcoming Events</h1>
 
+                {isLoading ? (
+                    <Skeleton className="w-full h-[500px] aspect-square" />
+                ) : (
+                    <EventSwiper data={event} />
+                )}
             </div>
 
         </div>

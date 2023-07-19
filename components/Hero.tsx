@@ -4,6 +4,7 @@ import Events from './Events'
 import Blog from './Blog'
 import Blog_card from './Blog_card'
 import Button from './Button'
+import Balancer from 'react-wrap-balancer'
 
 const Hero = () => {
     return (
@@ -17,10 +18,10 @@ const Hero = () => {
                 </div>
                 <div className="flex flex-row gap-4">
                     <div>
-                    <Button
-                   text='About Us'
-                   path='/about-us'
-                   />
+                        <Button
+                            text='About Us'
+                            path='/about-us'
+                        />
                     </div>
                 </div>
             </div>
@@ -40,32 +41,42 @@ const Hero = () => {
                             className='object-contain' />
                     </div>
                 </div>
-                <div className="flex flex-col sm:flex-row justify-start sm:justify-between">
+                <div className="flex flex-col items-center">
                     <div className="flex justify-start my-8">
-                        <div className="max-w-lg">
+                        <div className="max-w-3xl">
                             <h2 className="text-2xl font-bold mb-4">What We Aim to Achieve</h2>
                             <p className="text-lg card-subtitle">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
-                                feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
-                                purus porttitor fringilla.
+                                <Balancer>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
+                                    feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
+                                    purus porttitor fringilla.
+                                </Balancer>
                             </p>
                             <p className="text-lg card-subtitle mt-4">
-                                Sed vel iaculis odio. Suspendisse luctus velit auctor ex feugiat, at condimentum urna dictum. Nullam et mi at
-                                est maximus efficitur at vitae neque. Aliquam vitae quam consectetur, finibus tortor nec, elementum nisi.
+                                <Balancer>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
+                                    feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
+                                    purus porttitor fringilla.
+                                </Balancer>
                             </p>
                         </div>
                     </div>
-                    <div className="flex justify-end my-8 text-end">
-                        <div className="max-w-lg">
+                    <div className="flex justify-end my-8">
+                        <div className="max-w-3xl">
                             <h2 className="text-2xl font-bold mb-4">What We Aim to Build</h2>
                             <p className="text-lg card-subtitle">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
-                                feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
-                                purus porttitor fringilla.
+                                <Balancer>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
+                                    feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
+                                    purus porttitor fringilla.
+                                </Balancer>
                             </p>
                             <p className="text-lg card-subtitle mt-4">
-                                Sed vel iaculis odio. Suspendisse luctus velit auctor ex feugiat, at condimentum urna dictum. Nullam et mi at
-                                est maximus efficitur at vitae neque. Aliquam vitae quam consectetur, finibus tortor nec, elementum nisi.
+                                <Balancer>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae ullamcorper lorem. Proin vitae urna eget mi
+                                    feugiat interdum. Maecenas varius tellus sit amet sem imperdiet, in rhoncus mi suscipit. Integer id purus sed
+                                    purus porttitor fringilla.
+                                </Balancer>
                             </p>
                         </div>
                     </div>
@@ -75,10 +86,10 @@ const Hero = () => {
                     <div className="text-center bg-indigo-200 text-gray-800 p-4 rounded">
                         Love our mission? Become a part of our committee or join as a member!
                     </div>
-                   <Button
-                   text='Join Us'
-                   path='/about-us'
-                   />
+                    <Button
+                        text='Join Us'
+                        path='/about-us'
+                    />
                 </div>
 
                 <div className="flex flex-row my-8 ">
@@ -132,9 +143,9 @@ const Hero = () => {
                         Missed out on joining last year? Discover our latest event now!
                     </div>
                     <Button
-                   text='Explore Events'
-                   path='/events'
-                   />
+                        text='Explore Events'
+                        path='/events'
+                    />
                 </div>
 
 

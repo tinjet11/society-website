@@ -8,7 +8,8 @@ import MenuItem from '@mui/material/MenuItem'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link';
 import { useTheme } from "next-themes";
-import { Icons } from './Icons'
+import { Moon, Sun } from 'lucide-react';
+import { ModeToggle } from './ui/theme-toggle';
 
 
 const NavHorizontal = () => {
@@ -41,17 +42,18 @@ const NavHorizontal = () => {
         : ''}
 
       <div className="nav_right_item">
-        <div className='flex flex-row items-center gap-1 '>
-          <div className='my-2 p-2 flex flex-row'>
-          {
-            theme === "light-grey" ?
-              <Icons.sun /> : <Icons.moon />
-          }
-          <button onClick={() => theme === "light-grey" ? setTheme("dark") : setTheme("light-grey")}>
-            Theme
-          </button>
-          </div>
+        <div className='flex flex-row items-center gap-3 '>
+          {/*       <div className='my-2 p-2 flex flex-row'>
          
+            <button
+              className="transition-all duration-300 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
+              onClick={() => theme === "light-grey" ? setTheme("dark") : setTheme("light-grey")}>
+              <p className='nav-text'>Theme</p>
+            </button>
+          </div> */}
+
+          <ModeToggle />
+
           <button
             className="transition-all duration-300 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
             onClick={expand}

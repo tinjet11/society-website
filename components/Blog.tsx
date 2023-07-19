@@ -6,6 +6,7 @@ import Blog_card from './Blog_card';
 import { blogData } from '@/constant';
 import { useIntersection } from '@mantine/hooks';
 import Image from 'next/image';
+import Balancer from 'react-wrap-balancer';
 
 const posts = blogData;
 
@@ -48,12 +49,17 @@ const App = () => {
     const _posts = data?.pages.flatMap((page) => page);
     return (
         <div className="container">
-            <div className="flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4">
+            <div className="flex flex-col m-2 rounded-lg shadow-lg p-4">
                 <div className='flex flex-row justify-between m-2 p-2'>
 
                     <div className='flex flex-col basis-1/2 justify-center'>
                         <h1 className="font-bold text-4xl mb-3">Blog</h1>
-                        <h1 className="font-semibold mb-3">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</h1>
+                        <h1 className="font-semibold mb-3">
+                            <Balancer>
+                                Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                                aut odit aut fugit, sed quia consequuntur ma
+                            </Balancer>
+                        </h1>
                     </div>
 
                     <div className='flex justify-center basis-1/2 '>
@@ -79,7 +85,7 @@ const App = () => {
                                         subtitle={post.subtitle}
                                         date={post.date}
                                         image={post.image}
-                                        btn_txt= 'Read More'
+                                        btn_txt='Read More'
                                     />
                                 </div>
 
@@ -92,7 +98,7 @@ const App = () => {
                                     subtitle={post.subtitle}
                                     date={post.date}
                                     image={post.image}
-                                    btn_txt= 'Read More'
+                                    btn_txt='Read More'
                                 />
                             </div>
                         ))

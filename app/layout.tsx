@@ -1,6 +1,12 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers';
+import { NavHorizontal, NavVertical } from '@/components';
+import Footer from '@/components/Footer';
+import Titlebar from '@/components/title-bar';
+import Bottombar from '@/components/bottom-bar';
+import Explorer from '@/components/explorer';
+import Tab from '@/components/tab';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +25,29 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          {children}
+          <div className="flex flex-col overflow-y-hidden h-screen">
+            {/* Titlebar */}
+            <div><Titlebar /></div>
+
+            {/* Main content */}
+            <div className="flex flex-1">
+              <NavVertical />
+              <Explorer />
+              <div className="flex-1 w-full">
+                <Tab />
+                <main
+                  className="overflow-y-auto px-8"
+                  style={{ height: `calc(85vh - 30px)` }}
+                >
+                  {children}
+                </main>
+              </div>
+            </div>
+            <Bottombar />
+            <Footer />
+          </div>
         </Providers>
-    </body>
-    </html >
+      </body>
+    </html>
   )
 }

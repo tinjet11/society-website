@@ -1,23 +1,37 @@
-import React from 'react'
+
+import { CommitteeType } from '@/types'
 import Committee_card from './Committee_card'
 
-const Committee = () => {
+
+interface Props {
+    data: CommitteeType[];
+}
+
+const CommitteePage = ({ data }: Props) => {
 
     return (
         <div className='container'>
-            <div className='flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4'>
+            <div className='flex flex-col m-2 rounded-lg p-4'>
 
-                <h1 className="text-center font-bold text-4xl mb-3">Committee</h1>
+                <h1 className="font-bold text-4xl mb-3">Committee</h1>
+                {data.length === 0 && <p>No result found</p>}
 
+                <div className="flex flex-col gap-5 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
 
-                <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
-                    <Committee_card
-                        title={'President'}
-                        image={'/avatar-boy.svg'}
-                        name={'Mirza Hizriyan Nubli Hidayat'}
-                        study_year='Year 3 - Computer Science'
-                        email={'president@unmcss.com'}
-                    />
+                    {data &&
+                        data
+                            .sort((a, b) => parseInt(a.order) - parseInt(b.order)) // Convert to numbers and sort
+                            .map((member) => (
+                                <Committee_card
+                                    key={member.name}
+                                    title={member.title}
+                                    image={member.imageUrl}
+                                    name={member.name}
+                                    study_year={member.year}
+                                    email={member.email}
+                                />
+                            ))
+                    }
 
                     <Committee_card
                         title={'Vice President'}
@@ -47,15 +61,6 @@ const Committee = () => {
                     />
 
                     <Committee_card
-                        title={'Head of Tech'}
-                        image={'/avatar-boy.svg'}
-                        name={'Leong Tin Jet'}
-                        study_year='Year 2
-                              - Computer Science w/ AI'
-                        email={'headoftech@unmcss.com'}
-                    />
-
-                    <Committee_card
                         title={'Head of Creative Department'}
                         image={'/avatar-girl.svg'}
                         name={'Allysa Amani binti Kamardin'}
@@ -81,4 +86,4 @@ const Committee = () => {
     )
 }
 
-export default Committee
+export default CommitteePage

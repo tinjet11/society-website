@@ -1,17 +1,12 @@
-"use client"
-import { NavVertical, Temp ,NavHorizontal } from "@/components";
+import EmailSubscriptionForm from "@/components/subscription-form";
+import { ToasterProvider } from "@/providers/toast-provider";
 
 export default function Home() {
 
   return (
     <>
-      <NavVertical />
-
-        <NavHorizontal />
-
-        <div className="lg:ml-[250px]">
-        <Temp/>
-        </div>
+      <ToasterProvider />
+      <EmailSubscriptionForm />
     </>
   );
 }
