@@ -10,9 +10,13 @@
 
  */
 
+
+ .content-color{
+  @apply bg-[#2E2C45]
+ }
 [data-theme="dark"] body {
   font-family: 'Source Sans Pro', sans-serif;
-  @apply bg-[#363451] text-white
+  @apply bg-[#2E2C45] text-white
 }
 
 [data-theme="light-grey"] body {
@@ -31,7 +35,7 @@
 
 
 [data-theme="dark"] .card-bg {
-  @apply bg-[#363451] text-white
+  @apply content-color text-white
 }
 
 [data-theme="light-grey"] .card-bg {

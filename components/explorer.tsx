@@ -42,7 +42,7 @@ const Explorer = () => {
   const [eventOpen, setEventOpen] = useState(true);
 
   return (
-    <div className="w-[250px] text-gray-300 font-source-sans-pro font-normal title-bar-text h-screen hidden sm:block border-r border-[#4A4772]">
+    <div className="bg-[#363451] w-[250px] text-gray-300 font-source-sans-pro font-normal title-bar-text h-screen hidden sm:block border-r-2 border-[#4A4772]">
       {/*  <div className="bg-[#595681] w-[200px] text-gray-300 font-source-sans-pro ml-[70px] top-8 fixed title-bar-text h-full hidden sm:block flex-1"> */}
       <p className="py-2 px-3 font-light uppercase text-sm tracking-wider mb-3">Explorer</p>
       <div>

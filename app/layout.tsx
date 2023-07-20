@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers';
-import { NavHorizontal, NavVertical } from '@/components';
+import { NavVertical } from '@/components';
 import Footer from '@/components/Footer';
 import Titlebar from '@/components/title-bar';
 import Bottombar from '@/components/bottom-bar';
