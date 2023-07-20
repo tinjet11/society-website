@@ -25,15 +25,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <div className="flex flex-col overflow-y-hidden h-screen">
-            {/* Titlebar */}
+          <div className="flex flex-col overflow-hidden h-screen">
+        
             <div><Titlebar /></div>
 
-            {/* Main content */}
-            <div className="flex flex-1">
+    
+            <div className="flex">
               <NavVertical />
               <Explorer />
-              <div className="flex-1 w-full">
+              <div className="flex-1">
                 <Tab />
                 <main
                   className="overflow-y-auto px-8"

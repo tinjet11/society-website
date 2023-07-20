@@ -19,7 +19,7 @@ const Position_card = ({ title, description, link }: positionCardProps) => {
             <div className="self-end">
 
                 <Link href={link} target='blank'
-                > <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded">
+                > <button className="bg-[#E981D9] hover:bg-[#DCA7EE] text-white font-bold py-2 px-4 rounded">
                         Apply Now
                     </button>
                 </Link>

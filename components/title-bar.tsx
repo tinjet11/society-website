@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Titlebar = () => {
     return (
-        <section className='primary-bg-color flex h-[30px] w-full items-center px-2 title-bar-text border-b border-[#363451]'>
+        <section className='title-bar primary-bg-color flex h-[30px] w-full items-center px-2 title-bar-text border-b border-[#363451]'>
             {/* 
              <section className='top-0 fixed primary-bg-color flex h-8 w-full items-center px-2 title-bar-text border-b border-[#363451]'> */}
             <div className="flex gap-x-5 mr-auto">

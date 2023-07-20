@@ -18,6 +18,7 @@ export const revalidate = 0;
 const Events = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [event, setEvent] = useState<EventType[]>([]);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -29,10 +30,22 @@ const Events = () => {
 
         fetchEvents();
     }, []);
+
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    //prevent hydration error
+    if (!isMounted) {
+        return null;
+    }
+
+
     return (
-        <div className='container'>
-            <div className='flex flex-col m-2 primary-bg-colorrounded-lg shadow-lg p-4'>
-                <div className='flex flex-row justify-between m-2 p-2'>
+      
+            <div className='flex flex-col m-2 rounded-lg p-4'>
+                {/*                 <div className='flex flex-row justify-between m-2 p-2'>
 
                     <div className='flex flex-col basis-1/2 justify-center'>
                         <h1 className="font-bold text-4xl mb-3">Events</h1>
@@ -55,9 +68,9 @@ const Events = () => {
 
 
                 </div>
+ */}
 
-
-                <h1 className="font-bold text-center text-2xl sm:text-4xl mb-3">Upcoming Events</h1>
+                <h1 className="font-bold text-2xl sm:text-4xl mb-3">Upcoming Events</h1>
 
                 {isLoading ? (
                     <Skeleton className="w-full h-[500px] aspect-square" />
@@ -66,7 +79,7 @@ const Events = () => {
                 )}
             </div>
 
-        </div>
+ 
     )
 }
 

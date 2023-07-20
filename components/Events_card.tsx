@@ -98,7 +98,7 @@ const Events_card = ({ id, title, venue, date, imageUrl, link }: EventType) => {
 
     return (
 
-        <div className='flex flex-col h-full'>
+        <div className='flex flex-col h-full w-full'>
             <div className="flex justify-center items-center my-4">
                 <div className="flex items-center">
                     <span className="text-2xl md:text-3xl font-bold">{days}</span>
@@ -129,11 +129,11 @@ const Events_card = ({ id, title, venue, date, imageUrl, link }: EventType) => {
                 </div>
             </div>
 
-            <div className='flex flex-col md:flex-row p-4 justify-evenly'>
-                <div className='w-full h-full md:w-1/2'>
+            <div className='flex flex-col md:flex-row p-4 justify-between'>
+                <div className='w-[400px] h-full md:w-1/2'>
                     <Image
-                        width={500}
-                        height={200}
+                        width={400}
+                        height={300}
                         src={imageUrl}
                         alt={'Events poster'}
                         className='object-contain'

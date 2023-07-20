@@ -23,33 +23,49 @@ export default function EventSwiper({ data }: Props) {
         return null;
     }
     return (
-        <div>
-            <Swiper
-                spaceBetween={40}
-                slidesPerView={1}
-                pagination={{
-                    dynamicBullets: true,
-                }}
-                loop={true}
-                modules={[Pagination, Navigation]}
-                className="mySwiper mt-2">
+        /*         <div>
+                    <Swiper
+                        spaceBetween={40}
+                        slidesPerView={1}
+                        pagination={{
+                            dynamicBullets: true,
+                        }}
+                    
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper mt-2">
+        
+                        {data && data.map((event) => (
+                            <SwiperSlide key={event.id} className='w-auto h-full'>
+                                <Events_card
+                                    id={event.id}
+                                    title={event.title}
+                                    date={event.date}
+                                    venue={event.venue}
+                                    imageUrl={event.imageUrl}
+                                    link={event.link}
+                                /></SwiperSlide>
+                        ))}
+        
+        
+                    </Swiper>
+        
+                </div> */
 
-                {data && data.map((event) => (
-                    <SwiperSlide key={event.id} className='h-full'>
-                        <Events_card
-                            id={event.id}
-                            title={event.title}
-                            date={event.date}
-                            venue={event.venue}
-                            imageUrl={event.imageUrl}
-                            link={event.link}
-                        /></SwiperSlide>
-                ))}
+        <>
+            {data && data.map((event) => (
 
+                <Events_card
+                    id={event.id}
+                    title={event.title}
+                    date={event.date}
+                    venue={event.venue}
+                    imageUrl={event.imageUrl}
+                    link={event.link}
+                    key={event.id}
+                />
+            ))}
 
-            </Swiper>
-
-        </div>
+        </>
     )
 }
 

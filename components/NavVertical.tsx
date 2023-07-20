@@ -13,7 +13,7 @@ export default function NavVertical() {
     const { theme, setTheme } = useTheme();
     const pathname = usePathname()
     return (
-        <div className="w-[40px] sm:w-[70px] flex flex-col items-center primary-bg-color"
+        <div className="sidebar w-[40px] sm:w-[70px] flex flex-col items-center primary-bg-color"
         style={{ height: `calc(100vh - 30px -25px)` }} 
         >
             {/*  <div className="h-full w-[40px] sm:w-[70px] left-0 top-8 bottom-24 fixed flex flex-col items-center primary-bg-color "> */}
@@ -22,21 +22,21 @@ export default function NavVertical() {
 
                 <div className={`p-2 mb-2 text-center w-full justify-center flex  ${pathname === item.path ? 'border-l-2 border-[#E981D9]' : 'primary-bg-color'}`} >
                     <Link href={item.path} aria-label={item.name}>
-                        {item.icons}
+                      <span className={`${pathname === item.path ? 'text-[#E981D9]' : ''}`}>{item.icons}</span> 
                     </Link>
                 </div>
 
             ))
             }
 
-            <div className='flex ml-0 p-2 mt-2 text-center w-full justify-center'>
+     {/*        <div className='flex ml-0 p-2 mt-2 text-center w-full justify-center'>
                 <button onClick={() => theme === "light-grey" ? setTheme("dark") : setTheme("light-grey")}>
                     {
                         theme === "light-grey" ?
                             <Sun /> : <Moon />
                     }
                 </button>
-            </div>
+            </div> */}
         </div >
     )
 }
