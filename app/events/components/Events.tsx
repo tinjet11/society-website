@@ -1,9 +1,3 @@
-
-import { BlogType, EventType } from '@/types';
-import getEvents from '@/actions/getEvent';
-import { useState, useEffect } from 'react';
-import { Skeleton } from '../../../components/ui/skeleton';
-import getBlogs from '@/actions/getBlogs';
 import UpcomingEvent from './upcoming-event';
 import PreviousEvent from './previous-event';
 

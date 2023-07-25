@@ -32,51 +32,6 @@ const CommitteePage = ({ data }: Props) => {
                                 />
                             ))
                     }
-
-                    <Committee_card
-                        title={'Vice President'}
-                        image={'/avatar-girl.svg'}
-                        name={'Carmel Natasha Barnabas'}
-                        study_year='Year 2
-                              - Computer Science w/ AI'
-                        email={'vicepresident@unmcss.com'}
-                    />
-
-                    <Committee_card
-                        title={'Event Manager'}
-                        image={'/avatar-boy.svg'}
-                        name={'Rezmana Agung Wibawa'}
-                        study_year='Year 2
-                              - Computer Science w/ AI'
-                        email={'eventmanager@unmcss.com'}
-                    />
-
-                    <Committee_card
-                        title={'Marketing Director'}
-                        image={'/avatar-boy.svg'}
-                        name={'Lim En Xuan'}
-                        study_year='Year 2
-                              - Computer Science w/ AI'
-                        email={'marketingdirector@unmcss.com'}
-                    />
-
-                    <Committee_card
-                        title={'Head of Creative Department'}
-                        image={'/avatar-girl.svg'}
-                        name={'Allysa Amani binti Kamardin'}
-                        study_year='Year 2
-                              - Computer Science w/ AI'
-                        email={'creativedepartment@unmcss.com'}
-                    />
-
-                    <Committee_card
-                        title={'Public Relations'}
-                        image={'/avatar-boy.svg'}
-                        name={'Mithilesh Tew'}
-                        study_year='Year 1
-                              - Computer Science w/ AI'
-                        email={'publicrelation@unmcss.com'}
-                    />
                 </div>
 
             </div>

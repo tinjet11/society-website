@@ -19,7 +19,6 @@ const BlogCard = ({ data }: Props) => {
 
   const [isOpen, setIsOpen] = useState(false)
 
-  console.log(data.images)
   return (
     <>
       <div className="flex items-center justify-center w-full h-full ">
