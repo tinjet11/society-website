@@ -1,13 +1,13 @@
-import ErrorIcon from './icons/ErrorIcon';
-import WarningIcon from './icons/WarningIcon';
-import BellIcon from './icons/BellIcon';
-import CheckIcon from './icons/CheckIcon';
-import NextjsIcon from './icons/NextjsIcon';
-import SourceControlIcon from './icons/SourceControlIcon';
+import ErrorIcon from '../icons/ErrorIcon';
+import WarningIcon from '../icons/WarningIcon';
+import BellIcon from '../icons/BellIcon';
+import CheckIcon from '../icons/CheckIcon';
+import NextjsIcon from '../icons/NextjsIcon';
+import SourceControlIcon from '../icons/SourceControlIcon';
 
 const Bottombar = () => {
   return (
-    <footer className="w-full fixed bottom-0 flex justify-between text-xs h-[25px] primary-bg-color">
+    <footer className="w-full fixed bottom-0 flex justify-between text-xs h-[25px] secondary-bg-color">
       <div className="flex items-center">
         <a
           href="https://github.com/itsnitinr/vscode-portfolio"

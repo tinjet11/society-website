@@ -1,10 +1,8 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import getEvents from '@/actions/getEvent';
-import { NavVertical, NavHorizontal, Events } from '@/components';
-import { Skeleton } from '@/components/ui/skeleton';
-import { EventType } from '@/types';
-import { ToasterProvider } from '@/providers/toast-provider';
+
+import Events from '@/app/events/components/Events';
+import React from 'react';
+
+
 
 
 export default function Home() {
@@ -14,6 +12,7 @@ export default function Home() {
     <>
 
           <Events/>
+   
     </>
   );
 }

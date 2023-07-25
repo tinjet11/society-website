@@ -3,13 +3,11 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Facebook, Github, Instagram } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import Balancer from "react-wrap-balancer";
 import * as z from "zod"
 
 
@@ -56,11 +54,9 @@ const EmailSubscriptionForm = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
 
-     
-
-            <div className="max-w-md p-6 shadow-md rounded-md">
-                <h2 className="card-title text-xl font-bold mb-2">Subscribe to Our Newsletter</h2>
-                <p className="card-subtitle mb-6 text-sm">Stay up-to-date with our latest events and news.</p>
+            <div className="max-w-md p-6 shadow-2xl rounded-md">
+                <h2 className="title text-xl font-bold mb-2">Subscribe to Our Newsletter</h2>
+                <p className="mb-6 text-sm">Stay up-to-date with our latest events and news.</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-4">
                         <label htmlFor="name" className="block mb-2">
@@ -92,7 +88,7 @@ const EmailSubscriptionForm = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-3 rounded text-sm "
+                        className="bg-[#E981D9] hover:bg-[#DCA7EE] text-white font-bold py-2 px-4 rounded"
                     >
                         {loading ? 'Submitting...' : 'Subscribe'}
                     </button>
@@ -105,13 +101,13 @@ const EmailSubscriptionForm = () => {
                 <h2 className="text-xl font-bold mb-2">Follow Us On</h2>
                 <div className="flex space-x-4 justify-center">
                     <Link href="https://www.instagram.com/unm.css/" target="_blank" rel="noopener noreferrer">
-                        <Instagram size={24} className="text-indigo-500" />
+                        <Instagram size={24} className="text-[#E981D9]" />
                     </Link>
                     <Link href="https://www.facebook.com/CSSocietyUNM" target="_blank" rel="noopener noreferrer">
-                        <Facebook size={24} className="text-indigo-500" />
+                        <Facebook size={24} className="text-[#E981D9]" />
                     </Link>
                     <Link href="https://github.com/UoN-Computer-Science-Society" target="_blank" rel="noopener noreferrer">
-                        <Github size={24} className="text-indigo-500" />
+                        <Github size={24} className="text-[#E981D9]" />
                     </Link>
                 </div>
             </div>

@@ -11,8 +11,6 @@ interface EventDescriptionContentListProps {
     bg: string
 }
 
-
-
 const EventDescriptionContentList = ({ eventId, eventdescriptionId, bg }: EventDescriptionContentListProps) => {
 
     const [data, setData] = useState<EventDescriptionContentType[]>([]);
@@ -38,7 +36,6 @@ const EventDescriptionContentList = ({ eventId, eventdescriptionId, bg }: EventD
 
     return (
         <>
-            <>
                 {isLoading ? (
                     <>
                         <Skeleton className={`w-[200px] h-[20px] my-2 aspect-square ${bg == "white" ? 'bg-gray-900 opacity-10' : ''
@@ -60,7 +57,7 @@ const EventDescriptionContentList = ({ eventId, eventdescriptionId, bg }: EventD
                                 ))}
                     </ul>
                 }
-            </>
+            
         </>
     )
 }

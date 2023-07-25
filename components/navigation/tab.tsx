@@ -53,6 +53,7 @@ const Tab = () => {
       setCurrentPathName(nextTab.path)
     //  console.log("success")
     } else {
+      setCurrentPathName('/default')
      // console.log("error")
     }
   };
@@ -66,12 +67,12 @@ const Tab = () => {
 
 
   return (
-    <div className='tabs pr-2  mb-4  flex primary-bg-color overflow-x-auto'>
+    <div className='tabs pr-2  mb-4  flex secondary-bg-color overflow-x-auto'>
       <div className="cursor-pointer flex">
         {explorerItems.map((item) =>
           isOpen[item.id] && (
             // Only render the tab if isOpen is true for that item's id
-            <div className={`flex items-center text-sm ${pathname === item.path ? 'content-color border-t-2 border-[#E981D9]' : 'primary-bg-color'} flex-shrink-0`}>
+            <div className={`flex items-center text-sm ${pathname === item.path ? 'content-color border-t-2 border-[#E981D9]' : 'secondary-bg-color'} flex-shrink-0`}>
               <Link href={item.path} key={item.name} className='mr-3'>
                 <div className='py-3 px-3 flex items-center text-sm'>
                 <Image

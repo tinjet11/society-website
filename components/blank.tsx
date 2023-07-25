@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-Image
+
 const blank = () => {
     return (
         <div className="flex flex-col items-center min-h-screen opacity-20">

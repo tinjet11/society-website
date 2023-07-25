@@ -5,9 +5,9 @@ import React from 'react'
 const Position_card = ({ title, description, link }: positionCardProps) => {
     return (
 
-        <div className="flex lg:flex-row flex-col justify-between m-4 card-bg rounded-lg shadow-md p-4">
+        <div className="flex lg:flex-row flex-col justify-between m-4 card-bg rounded-lg shadow-2xl p-4">
             <div className="flex flex-col">
-                <div className="committee-card-title font-semibold mb-2">
+                <div className="title font-semibold mb-2">
                     {title}
                 </div>
 

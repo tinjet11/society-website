@@ -1,14 +1,11 @@
-import { NavVertical, Position, NavHorizontal } from "@/components";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Blank from "@/components/blank";
-
+import LandingPage from "@/components/landingpage";
+import Hero from "@/components/landingpage";
 
 export default function Home() {
 
   return (
     <>
-      <Hero />
+      <LandingPage />
 
     </>
   );

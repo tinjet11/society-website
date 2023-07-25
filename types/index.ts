@@ -1,25 +1,3 @@
-export interface userProps {
-    id: number,
-    name: string,
-    username: string,
-    email: string,
-    website: string,
-    company: {
-        name: string,
-        catchPhrase: string,
-        bs: string
-    }
-}
-
-export interface blogCardProps {
-    title: string,
-    subtitle: string,
-    date: string,
-    image: string,
-    btn_txt: string
-
-}
-
 export interface positionCardProps {
     title: string,
     description: string
@@ -35,6 +13,8 @@ export interface committeeCardProps {
 }
 
 
+//data types fetch from database
+
 export interface CommitteeType {
     name: string,
     title: string,
@@ -43,7 +23,6 @@ export interface CommitteeType {
     imageUrl: string,
     order: string,
 }
-
 
 export interface PositionType {
     title: string,
@@ -54,6 +33,7 @@ export interface PositionType {
 export interface EventType {
     id: string,
     title: string
+    description:string
     date: Date
     venue: string
     imageUrl: string
@@ -74,15 +54,20 @@ export interface EventDescriptionContentType {
     eventDescriptionId: string
 }
 
-export interface GalleryType {
-    id: string,
-    title: string,
-    time: string,
-    images: ImageType[],
-}
-
 
 export interface ImageType{
     id:string,
+    blogId: string,
     url:string,
+}
+
+export interface BlogType{
+    id: string,
+    title: string,
+    content:string
+    date: string
+    venue: string,
+    coverImageUrl: string,
+    year: string
+    images: ImageType[],
 }

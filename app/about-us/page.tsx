@@ -1,7 +1,7 @@
 import getCommittees from "@/actions/getCommittee";
 import getPositions from "@/actions/getPosition";
-import { NavVertical, NavHorizontal, Position } from "@/components";
-import CommitteePage from "@/components/Committee";
+import CommitteePage from "@/app/about-us/components/Committee";
+import Position from "@/app/about-us/components/Position";
 
 export const revalidate = 0
 
