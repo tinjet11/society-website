@@ -54,7 +54,7 @@ const GalleryPage = ({ imageData }: Props) => {
         <div>
             <div>
                 <div className=' my-4'>
-                    <div className="image-gallery-wrapper mx-auto">
+                    <div className="w-auto mx-auto">
                         <ImageGallery
                             items={imagesArray}
                             lazyLoad={true}
@@ -65,11 +65,6 @@ const GalleryPage = ({ imageData }: Props) => {
                             renderItem={customRenderItem}
                         />
                     </div>
-                    <style jsx>{`
-        .image-gallery-wrapper {
-          width: auto; /* Set the width to 100% of the viewport width */
-        }
-      `}</style>
                 </div>
             </div>
         </div>

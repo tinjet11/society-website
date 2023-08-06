@@ -52,7 +52,20 @@ const EmailSubscriptionForm = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="flex flex-col items-center min-h-screen">
+
+            <div className="mb-8">
+            <pre className=" text-[5px] md:text-xs font-bold">
+    {`                                                                        
+  ####    ####   #    #  #####    ##     ####   #####      #    #   ##### 
+  #    #  #    #  ##   #    #     #  #   #    #    #        #    #  #      
+  #       #    #  # #  #    #    #    #  #         #        #    #   ####  
+  #       #    #  #  # #    #    ######  #         #        #    #       # 
+  #    #  #    #  #   ##    #    #    #  #    #    #        #    #  #    # 
+   ####    ####   #    #    #    #    #   ####     #         ####    ####  
+    `}
+        </pre>
+            </div>
 
             <div className="max-w-md p-6 shadow-2xl rounded-md">
                 <h2 className="title text-xl font-bold mb-2">Subscribe to Our Newsletter</h2>
@@ -85,15 +98,15 @@ const EmailSubscriptionForm = () => {
                         {errors.email && <span className="text-red-500">{errors.email.message}</span>}
                     </div>
                     <div className="flex justify-end">
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className="bg-[#E981D9] hover:bg-[#DCA7EE] text-white font-bold py-2 px-4 rounded"
-                    >
-                        {loading ? 'Submitting...' : 'Subscribe'}
-                    </button>
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="bg-[#E981D9] hover:bg-[#DCA7EE] text-white font-bold py-2 px-4 rounded"
+                        >
+                            {loading ? 'Submitting...' : 'Subscribe'}
+                        </button>
                     </div>
-                   
+
                 </form>
             </div>
             <div className="mt-6 justify-center">

@@ -33,7 +33,7 @@ export interface PositionType {
 export interface EventType {
     id: string,
     title: string
-    description:string
+    description: string
     date: Date
     venue: string
     imageUrl: string
@@ -55,19 +55,27 @@ export interface EventDescriptionContentType {
 }
 
 
-export interface ImageType{
-    id:string,
+export interface ImageType {
+    id: string,
     blogId: string,
-    url:string,
+    url: string,
 }
 
-export interface BlogType{
+export interface BlogType {
     id: string,
     title: string,
-    content:string
+    content: string
     date: string
     venue: string,
     coverImageUrl: string,
     year: string
     images: ImageType[],
+}
+
+
+export interface NoticeBoardType {
+    title: string,
+    description: string,
+    buttonText: string,
+    link: string,
 }

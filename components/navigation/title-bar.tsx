@@ -8,10 +8,11 @@ const Titlebar = () => {
              <section className='top-0 fixed secondary-bg-color flex h-8 w-full items-center px-2 title-bar-text border-b border-[#363451]'> */}
             <div className="flex gap-x-5 mr-auto">
                 <Image
-                    src="/nav/vscode_icon.svg"
+                    src="/nav/CSS_dark_icon.svg"
                     alt="VSCode Icon"
-                    height={15}
-                    width={15}
+                    height={20}
+                    width={20}
+                    className='object-fit'
                 />
                 <p className='sm:block hidden'>File</p>
                 <p className='sm:block hidden'>View</p>

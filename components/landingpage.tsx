@@ -1,9 +1,11 @@
 
 import PreviousEvent from '@/app/events/components/previous-event'
 import UpcomingEvent from '@/app/events/components/upcoming-event'
+
 import React from 'react'
 import { Facebook, Github, Instagram } from "lucide-react";
 import Link from "next/link";
+import NoticeBoard from "@/components/noticeboard";
 
 
 const LandingPage = () => {
@@ -12,7 +14,7 @@ const LandingPage = () => {
 
             <div className="flex flex-col">
 
-                <div className="w-full flex flex-col items-start my-20 p-2">
+       {/*          <div className="w-full flex flex-col items-start my-20 p-2">
                     <div>
                         <h1 className="header">Unleash Your <span className='header-highlight'>Tech Passion</span>!</h1>
                     </div>
@@ -23,7 +25,12 @@ const LandingPage = () => {
                     <div className='self-start mt-4'>
                         <button className='button'>Discover Event</button>
                     </div>
-                </div>
+                </div> */}
+
+                <NoticeBoard/>
+
+
+
 
                 <div className='px-3'>
                     <p className='title-header'>Upcoming Events</p>

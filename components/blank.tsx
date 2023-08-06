@@ -5,11 +5,10 @@ const blank = () => {
     return (
         <div className="flex flex-col items-center min-h-screen opacity-20">
             <Image
-            src={'/grey-css-logo.svg'}
+            src={'/CSS_dark_icon.png'}
             width={800}
             height={800}
             alt='grey-css-logo'
-            className='mt-12'
             />
         </div>
     )
