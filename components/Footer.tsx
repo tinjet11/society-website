@@ -1,91 +1,89 @@
-import { Facebook, Github, Instagram } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Balancer } from 'react-wrap-balancer';
+import LinkPlaceholder from './ui/link-placeholder';
+import { Facebook, Github, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="container block lg:hidden mt-10 border-t ">
-            <div className="py-10 flex flex-col md:flex-row gap-8 md:gap-16">
+        <footer className="bg-[#4A4772] p-4 text-base text-[#E8E6E3]">
+            <p className="mb-2">
+                &copy; 2023 Computer Science Society, University of Nottingham Malaysia. All rights reserved.
+            </p>
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16">
 
-                <div className='flex flex-col gap-y-4 mt-3'>
-                    <Link href="/">
-                        <Image
-                            src="/nav/logo.svg"
-                            alt="CSS logo"
-                            width={50}
-                            height={50}
-                            className="object-contain items-center flex justify-center"
-                        />
-                    </Link>
+                <div className='flex flex-col gap-y-4 mt-3 md:basis-3/4'>
+
                     <div>
-                        <p className="text-lg font-bold"><Balancer>University of Nottingham Malaysia</Balancer></p>
-                        <p className="text-md font-semibold"><Balancer>Computer Science Society</Balancer></p>
+
+                        <p>
+                            Website by <LinkPlaceholder url='' text='Leong Tin Jet' />, and contributors.
+                            This website is powered by <LinkPlaceholder url='' text='Next.js' /> and open-source in our <LinkPlaceholder url='' text='Github Repository' />.
+                            Feel free to submit a pull request, or raise an issue if there are any problems.
+                        </p>
                     </div>
 
-
-                    <div className="flex flex-col gap-2">
-                        <h3 className='text-base font-normal underline'>Follow Us On</h3>
-                        <div className='flex gap-4 items-center'>
-                            <Link href="https://www.instagram.com/unm.css/" target="_blank" rel="noopener noreferrer">
-                                <Instagram size={24} className="text-indigo-500" />
-                            </Link>
-                            <Link href="https://www.facebook.com/CSSocietyUNM" target="_blank" rel="noopener noreferrer">
-                                <Facebook size={24} className="text-indigo-500" />
-                            </Link>
-                            <Link href="https://github.com/UoN-Computer-Science-Society" target="_blank" rel="noopener noreferrer">
-                                <Github size={24} className="text-indigo-500" />
-                            </Link>
+                    <Link href="/">
+                        <div className="flex items-center justify-start">
+                            <Image
+                                src="/CSS_dark.png"
+                                alt="CSS logo"
+                                width={200}
+                                height={200}
+                                className="object-contain"
+                            />
                         </div>
-                    </div>
+                    </Link>
 
+                    <p>UNM’s Computer Science Society is part of the <LinkPlaceholder url='' text='Student’s Association at University of Nottingham Malaysia' /></p>
                 </div>
 
-                <div className='flex-col mt-3'>
-                    <h3 className='text-base font-normal underline mb-3'>Quick link</h3>
-                    <div className='flex gap-x-5 md:gap-x-10'>
-                        <div className="flex flex-col font-semibold gap-3">
-                            <Link href="/">
-                                <span>Home</span>
-                            </Link>
-                            <Link href="/about-us">
-                                <span>About Us</span>
-                            </Link>
-                            <Link href="/events">
-                                <span>Events</span>
-                            </Link>
+                <div className='flex-col mt-3 md:basis-1/4'>
 
-                            <Link href="/blog">
-                                <span>Blog</span>
-                            </Link>
-                        </div>
+                    <h3 className='text-xl font-bold mb-3'>Useful links</h3>
 
-                        <div className="flex flex-col font-semibold gap-3">
+                    <ul className='list-disc pl-5'>
+                        <li className='my-2'><LinkPlaceholder url='' text='Our Github' /></li>
+                        <li className='my-2'><LinkPlaceholder url='' text='Read our Constitution' /></li>
+                        <li className='my-2'><LinkPlaceholder url='' text='Discord' /></li>
+                        <li className='my-2'><LinkPlaceholder url='' text='UNM Student Association' /></li>
+                        <li className='my-2'><LinkPlaceholder url='' text='University of Nottingham Malaysia' /></li>
+                    </ul>
 
-                            <Link href="/resources">
-                                <span>Resources</span>
-                            </Link>
-                            <Link href="/contact-us">
-                                <span>Contact Us</span>
-                            </Link>
-                        </div>
+                    <h3 className='text-xl font-bold my-3'>Talk with us</h3>
+
+                    <div className="flex space-x-4 ">
+                        <Link href="https://www.instagram.com/unm.css/" target="_blank" rel="noopener noreferrer">
+                            <Instagram size={24} className="text-[#E981D9]" />
+                        </Link>
+                        <Link href="https://www.facebook.com/CSSocietyUNM" target="_blank" rel="noopener noreferrer">
+                            <Facebook size={24} className="text-[#E981D9]" />
+                        </Link>
+                        <Link href="https://github.com/UoN-Computer-Science-Society" target="_blank" rel="noopener noreferrer">
+                            <Github size={24} className="text-[#E981D9]" />
+                        </Link>
                     </div>
                 </div>
 
+                {/*          <div className='flex-col mt-3 md:basis-1/4 self-center'>
 
-            </div>
+                    <h3 className='text-xl font-bold mb-3'>Talk with us</h3>
 
-            <div>
-                <div className="mx-auto py-8">
-                    <p className="text-center text-xs">
-                        &copy; 2023 Computer Science Society, University of Nottingham Malaysia. All rights reserved.
-                    </p>
+                    <div className="flex space-x-4 ">
+                    <Link href="https://www.instagram.com/unm.css/" target="_blank" rel="noopener noreferrer">
+                        <Instagram size={24} className="text-[#E981D9]" />
+                    </Link>
+                    <Link href="https://www.facebook.com/CSSocietyUNM" target="_blank" rel="noopener noreferrer">
+                        <Facebook size={24} className="text-[#E981D9]" />
+                    </Link>
+                    <Link href="https://github.com/UoN-Computer-Science-Society" target="_blank" rel="noopener noreferrer">
+                        <Github size={24} className="text-[#E981D9]" />
+                    </Link>
                 </div>
+                </div> */}
             </div>
         </footer>
     );
 };
 
 export default Footer;
-
