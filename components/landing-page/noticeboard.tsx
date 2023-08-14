@@ -3,7 +3,7 @@
 import getNoticeBoard from '@/actions/getNoticeBoard';
 import { NoticeBoardType } from '@/types';
 import React, { useEffect, useState } from 'react'
-import { Skeleton } from './ui/skeleton';
+import { Skeleton } from '../ui/skeleton';
 import NoticeBoardCard from './noticeboard-card';
 
 // Import Swiper React components

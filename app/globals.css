@@ -10,14 +10,26 @@
 
  */
 
+ @font-face {
+  font-family: "Consolas";
+  src: url('/fonts/Consolas.ttf');
+ }
+
+ @font-face {
+  font-family: 'ProximaNova'; 
+  src: url('/fonts/ProximaNova.otf') format('opentype');
+}
+
 
 .content-color {
   @apply bg-[#2E2C45]
 }
 
 [data-theme="dark"] body {
-  font-family: 'Source Sans Pro', sans-serif;
-  @apply bg-[#2E2C45] text-white
+  font-family: proxima-nova, sans-serif;
+font-style: normal;
+font-weight: 400;
+  @apply bg-[#2E2C45] text-white text-lg
 }
 
 
@@ -27,9 +39,29 @@
 }
 
 
+.header {
+  @apply text-5xl font-bold
+}
+
+.header-highlight {
+  color: #5FD88C;
+}
+
+.sub-header {
+  @apply text-lg font-medium
+}
+
+.title-header {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
+
+  @apply my-8
+}
+
 .title-bar-text {
   color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Consolas';
   font-size: 0.85rem;
 }
 
@@ -74,7 +106,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .countdown-big {
     display: none;
   }
@@ -86,7 +118,7 @@
   .countdown-small {
     display: none;
   }
-}
+} */
 
 /* Define the default width for gallery-display */
 .gallery-display {
@@ -118,25 +150,6 @@
   }
 }
 
-.header {
-  @apply text-3xl md:text-5xl font-bold
-}
-
-.header-highlight {
-  color: #5FD88C;
-}
-
-.sub-header {
-  @apply text-lg font-semibold tracking-wider
-}
-
-.title-header {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: normal;
-
-  @apply my-8
-}
 
 .swiper {
   width: 100%;

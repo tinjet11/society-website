@@ -99,9 +99,9 @@ const Explorer = () => {
 
 
   return (
-    <div className="bg-[#363451] w-[250px] text-gray-300 font-source-sans-pro font-normal title-bar-text h-screen hidden md:block border-r-2 border-[#4A4772]">
+    <div className="bg-[#363451] w-[250px] text-gray-300 font-semibold title-bar-text text-base h-screen hidden md:block border-r-2 border-[#4A4772]">
       {/*  <div className="bg-[#595681] w-[200px] text-gray-300 font-source-sans-pro ml-[70px] top-8 fixed title-bar-text h-full hidden sm:block flex-1"> */}
-      <p className="py-2 px-3 font-light uppercase text-sm tracking-wider mb-3">Explorer</p>
+      <p className="py-2 px-3 font-light uppercase tracking-wider mb-3">Explorer</p>
       <div>
         <input
           type="checkbox"
@@ -110,7 +110,7 @@ const Explorer = () => {
           checked={mainOpen}
           onChange={() => setMainOpen(!mainOpen)}
         />
-        <label htmlFor="portfolio-checkbox" className="uppercase font-bold text-xs tracking-wider flex items-center cursor-pointer px-2">
+        <label htmlFor="portfolio-checkbox" className="uppercase font-bold tracking-wider flex items-center cursor-pointer px-2">
           <ChevronRight
             className="transition-transform duration-200"
             style={mainOpen ? { transform: 'rotate(90deg)' } : {}}
@@ -122,7 +122,7 @@ const Explorer = () => {
         >
           {explorerItems.map((item) => (
             <Link href={item.path} key={item.name}>
-              <div className="py-1 px-4 flex items-center text-xs">
+              <div className="py-1 px-4 flex items-center">
                 <Image
                   src={`/${item.icon}`}
                   alt={item.name}
@@ -141,7 +141,7 @@ const Explorer = () => {
             checked={upcomingEventOpen}
             onChange={() => setupcomingEventOpen(!upcomingEventOpen)}
           />
-          <label htmlFor="upcomingevent-checkbox" className="uppercase font-bold text-xs tracking-wider flex items-center cursor-pointer px-3 ml-1 mt-1">
+          <label htmlFor="upcomingevent-checkbox" className="uppercase font-bold tracking-wider flex items-center cursor-pointer px-3 ml-1 mt-1">
             <ChevronRight
               className="transition-transform duration-200"
               style={upcomingEventOpen ? { transform: 'rotate(90deg)' } : {}}
@@ -154,7 +154,7 @@ const Explorer = () => {
 
             {event.map((item) => (
               <a href={`/events#${item.id}`}>
-                <div className="ml-5 py-1 px-4 flex items-center text-xs">
+                <div className="ml-5 py-1 px-4 flex items-center">
                   <Image
                     src={`js_icon.svg`}
                     alt={'upcoming event'}
@@ -170,7 +170,7 @@ const Explorer = () => {
 
             {event.length === 0 &&
               <>
-              <div className="ml-5 py-1 px-4 flex items-center text-xs">
+              <div className="ml-5 py-1 px-4 flex items-center">
                  <p className='p-1 ml-2'>No event available</p>
               </div>
               </>}
@@ -185,7 +185,7 @@ const Explorer = () => {
             checked={previousEventOpen}
             onChange={() => setpreviousEventOpen(!previousEventOpen)}
           />
-          <label htmlFor="previousevent-checkbox" className="uppercase font-bold text-xs tracking-wider flex items-center cursor-pointer px-3 ml-1 mt-1">
+          <label htmlFor="previousevent-checkbox" className="uppercase font-bold tracking-wider flex items-center cursor-pointer px-3 ml-1 mt-1">
             <ChevronRight
               className="transition-transform duration-200"
               style={previousEventOpen ? { transform: 'rotate(90deg)' } : {}}
@@ -208,7 +208,7 @@ const Explorer = () => {
 
                 <label
                   htmlFor={`event-checkbox-${yearRange}`}
-                  className="uppercase font-bold text-xs tracking-wider flex items-center cursor-pointer px-3 ml-3"
+                  className="uppercase font-bold tracking-wider flex items-center cursor-pointer px-3 ml-3"
                 >
                   <ChevronRight
                     className="transition-transform duration-200"
@@ -222,7 +222,7 @@ const Explorer = () => {
                   {blog.filter((blog) => blog.year === yearRange).map((item) =>
                   (
                     <a href={`/events#${item.id}`}>
-                      <div className="ml-5 py-1 px-4 flex items-center text-xs">
+                      <div className="ml-5 py-1 px-4 flex items-center">
                         <Image
                           src={`js_icon.svg`}
                           alt={'previous event'}

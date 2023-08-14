@@ -67,7 +67,7 @@ const Tab = () => {
 
 
   return (
-    <div className='tabs pr-2  mb-4  flex secondary-bg-color overflow-x-auto'>
+    <div className='tabs title-bar-text pr-2  mb-4  flex secondary-bg-color overflow-x-auto'>
       <div className="cursor-pointer flex">
         {explorerItems.map((item) =>
           isOpen[item.id] && (

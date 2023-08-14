@@ -113,7 +113,12 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                     />
                 </div>
 
-                <div className="flex flex-row justify-center w-auto p-4 items-center mt-8 mb-4 rounded-2xl border countdown-small">
+               
+
+
+                <div className='flex flex-col justify-between p-2'>
+
+                <div className="flex flex-row justify-center w-auto p-4 items-center mb-4 rounded-2xl border countdown-small">
                     <div className="flex items-center">
                         <span className="text-2xl md:text-3xl font-bold">{days}</span>
                         <span className="card-subtitle ml-1">
@@ -143,8 +148,6 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                     </div>
                 </div>
 
-
-                <div className='flex flex-col justify-between p-2 mt-4'>
                     <div className='items-start'>
                         {isLoading ? (
                             <Skeleton className="w-[300px] h-[30px] aspect-square" />
@@ -243,7 +246,7 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                             </Link>
                         </div>
                     </div>
-
+{/* 
                     <div className="flex flex-row justify-center w-auto p-4 items-center mt-8 mb-4 rounded-2xl border countdown-big">
                         <div className="flex items-center">
                             <span className="text-2xl md:text-3xl font-bold">{days}</span>
@@ -272,7 +275,7 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                                 {`Seconds`}
                             </span>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
