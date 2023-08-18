@@ -6,6 +6,7 @@ import getBlogs from '@/actions/getBlogs';
 import BlogCard from './Blog_card';
 import { usePathname } from 'next/navigation';
 import { Skeleton } from '@/components/ui/skeleton';
+import LinkPlaceholder from '@/components/ui/link-placeholder';
 
 
 export const revalidate = 0;
@@ -46,6 +47,14 @@ const PreviousEvent = () => {
                 <Skeleton className="w-full h-[500px] mt-4 aspect-square" />
             ) : (
                 <>
+
+                    {blog.length === 0 && (
+                        <div className='my-3'>
+                            <p>No previous event available at this time.<br />
+                                Follow us on <LinkPlaceholder text='social media' url='https://linktr.ee/unmcss' /> or subscribe to our newsletter for latest update!
+                            </p>
+                        </div>
+                    )}
                     <div className="flex flex-col gap-3 md:grid md:grid-cols-2 mt-10">
 
                         {pathname === '/events' && blog.map((item) => (

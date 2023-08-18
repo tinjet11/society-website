@@ -15,6 +15,8 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
+import LinkPlaceholder from '../ui/link-placeholder';
+import { it } from 'node:test';
 
 const NoticeBoard = () => {
 
@@ -47,7 +49,7 @@ const NoticeBoard = () => {
 
   return (
     <>
-      {isLoading ? (
+      {/*       {isLoading ? (
         <Skeleton className="w-full h-[500px] mt-4 aspect-square" />
       ) : <>
         <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
@@ -59,7 +61,14 @@ const NoticeBoard = () => {
           ))}
         </Swiper>
       </>
-      }
+      } */}
+      <p>
+        {noticeboard.map((item) => (
+          <span className='mx-3'> {item.title}. {item.description}. <LinkPlaceholder text={item.buttonText} url={item.link} /></span>
+        ))}
+      </p>
+
+
     </>
 
   )

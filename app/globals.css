@@ -162,3 +162,24 @@ font-weight: 400;
   height: 100%;
   object-fit: cover;
 }
+
+
+.marqueeContainer {
+  overflow: hidden;
+  width: 100vw;
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

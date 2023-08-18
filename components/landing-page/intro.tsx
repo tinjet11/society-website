@@ -28,9 +28,13 @@ const   Intro = () => {
 
             <div className='md:basis-1/2 flex justify-center'>
                 <Image
-                    src='/CSS_dark_icon.png'
+                    src='/group_photo.jpg'
                     width={300}
                     height={300}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                    }}
                     alt="image"
                     className="object-contain"
                 />

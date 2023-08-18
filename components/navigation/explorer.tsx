@@ -170,9 +170,9 @@ const Explorer = () => {
 
             {event.length === 0 &&
               <>
-              <div className="ml-5 py-1 px-4 flex items-center">
-                 <p className='p-1 ml-2'>No event available</p>
-              </div>
+                <div className="ml-5 py-1 px-4 flex items-center">
+                  <p className='p-1 ml-2'>No upcoming event available</p>
+                </div>
               </>}
           </div>
 
@@ -194,6 +194,13 @@ const Explorer = () => {
           </label>
           <div
             className={`py-2 cursor-pointer ${previousEventOpen ? 'block' : 'hidden'}`}>
+
+            {yearRanges.length === 0 &&
+              <>
+                <div className="ml-5 py-1 px-4 flex items-center">
+                  <p className='p-1 ml-2'>No previous event available</p>
+                </div>
+              </>}
 
             {yearRanges.map((yearRange) => (
               <div key={yearRange} className='mt-2'>

@@ -6,7 +6,6 @@ import Bottombar from '@/components/navigation/bottom-bar';
 import Explorer from '@/components/navigation/explorer';
 import Tab from '@/components/navigation/tab';
 import NavVertical from '@/components/navigation/NavVertical';
-import Head from 'next/head';
 import Footer from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'] })

@@ -5,12 +5,23 @@ import NoticeBoard from "@/components/landing-page/noticeboard";
 import Intro from './intro';
 import Happening from './happening';
 import Partners from './partners';
+import Image from 'next/image';
+
+import EmailSubscriptionForm from "@/app/contact-us/components/subscription-form";
+import { ToasterProvider } from "@/providers/toast-provider";
+import LinkPlaceholder from '../ui/link-placeholder';
+import SocialMedia from '../ui/social-media';
+import Marquee from "react-fast-marquee";
 
 const LandingPage = () => {
     return (
 
         <>
             <div className="container">
+                <Marquee speed={30}>
+                    <NoticeBoard />
+                </Marquee>
+
 
                 <div className="flex flex-col">
 
@@ -33,7 +44,7 @@ const LandingPage = () => {
                 <NoticeBoard />
 
  */}
-                    <div className='px-3'>
+                    <div className='px-6'>
                         <p className='title-header'>Who are <span className='title'>we</span></p>
 
                         <Intro />
@@ -41,34 +52,86 @@ const LandingPage = () => {
                     </div>
 
 
-                    <div className='px-3'>
+                    <div className='px-6'>
                         <p className='title-header'>What's <span className='title'>happenning?</span></p>
                         <Happening />
 
                     </div>
 
-                    <div className='px-3'>
+                    <div className='px-6'>
                         <p className='title-header'>Our Upcoming <span className='title'>Events</span></p>
 
                         <UpcomingEvent />
                     </div>
 
-                    <hr/>
+                    <hr />
 
-                    <div className='p-3 my-3'>
-                        <p className='title-header text-center'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></p>
+                    <div className='px-6 my-3'>
+                        <p className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></p>
 
                         <Partners />
                     </div>
 
-                    <hr/>
+                    <hr />
 
 
-                    <div className='px-3'>
-                        <p className='title-header'>Previous Events</p>
+                    <div className='px-6'>
+                        <p className='title-header'>See <span className='title'>More</span> of  <span className='text-[#E981D9]'>us!</span> </p>
+
+                        <div className='flex md:flex-row flex-col gap-3'>
+                            <div className='flex flex-col gap-y-4 md:basis-1/2'>
+                                <div>
+                                    <p>Get to know us better through our social media pages! We also regularly post and publish news
+                                        about <LinkPlaceholder text='events' url='/events' /> and <LinkPlaceholder text='activities' url='/events' /> to let our members know what’s happening
+                                        with the society!</p>
+                                </div>
+
+                                <div className='flex md:flex-row flex-col gap-3 md:justify-start'>
+
+                                    <div className='flex flex-col gap-y-4'>
+                                        <ToasterProvider />
+                                        <EmailSubscriptionForm />
+
+                                        <div className='flex flex-col'>
+                                            <h2 className="text-xl font-bold mb-2">Social Media</h2>
+                                            <div className="flex space-x-4">
+                                                <SocialMedia />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div className="md:basis-1/2 w-auto h-[400px]">
+
+                                <Image
+                                    src='/group_photo.jpg'
+                                    alt="committee image"
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                    width={400}
+                                    height={400}
+                                    className='self-center object-fill'
+                                    loading='lazy'
+                                />
+
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div className='px-6'>
+                        <p className='title-header'>Latest <span className='title'>News</span></p>
 
                         <PreviousEvent />
-
                     </div>
 
 

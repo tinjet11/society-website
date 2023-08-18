@@ -7,6 +7,8 @@ import React, { useEffect, useState } from 'react'
 import Events_card from './Events_card';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import SocialMedia from '@/components/ui/social-media';
+import LinkPlaceholder from '@/components/ui/link-placeholder';
 
 const UpcomingEvent = () => {
 
@@ -57,16 +59,11 @@ const UpcomingEvent = () => {
                         />
                     ))}
 
-                    {event.length === 0 && pathname === '/events' && (
-                        <div className='mx-auto card-bg rounded-lg shadow-2xl p-8 flex flex-col'>
-                            <p>No event available this time.<br></br>
-                                Follow our social media or subscribe to our newsletter for latest update
+                    {event.length === 0 && (
+                        <div className='mt-3 mb-6'>
+                            <p>No upcoming event available at this time.<br />
+                                Follow us on <LinkPlaceholder text='social media' url='https://linktr.ee/unmcss' /> or subscribe to our newsletter for latest update!
                             </p>
-                            <Link
-                                href='/contact-us'
-                                className='self-end'>
-                                <button className='button mt-3 items-end'>Get latest information</button>
-                            </Link>
                         </div>
                     )}
                 </>
