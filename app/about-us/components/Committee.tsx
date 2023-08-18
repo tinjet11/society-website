@@ -1,6 +1,7 @@
 
 import { CommitteeType } from '@/types'
 import Committee_card from './Committee_card'
+import LinkPlaceholder from '@/components/ui/link-placeholder';
 
 
 interface Props {
@@ -13,8 +14,7 @@ const CommitteePage = ({ data }: Props) => {
         <div className='container'>
             <div className='flex flex-col m-2 rounded-lg p-4'>
 
-                <h1 className="font-bold text-4xl mb-3">Committee</h1>
-                {data.length === 0 && <p>No result found</p>}
+                {data.length === 0 && <p> Follow us on <LinkPlaceholder text='social media' url='https://linktr.ee/unmcss' /> for latest update!</p>}
 
                 <div className="flex flex-col gap-5 md:grid md:grid-cols-2 lg:grid-cols-3 mt-10">
 

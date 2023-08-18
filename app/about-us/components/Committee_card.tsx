@@ -13,8 +13,8 @@ const Committee_card = ({ title, image, name, study_year, email }: committeeCard
 
             <div className="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
                 <Image
-                    width={30}
-                    height={30}
+                    width={150}
+                    height={150}
                     src={image}
                     alt="CommitteeImage"
                     className="w-full h-full object-cover" />
