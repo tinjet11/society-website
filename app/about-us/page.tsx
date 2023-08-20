@@ -3,6 +3,7 @@ import getPositions from "@/actions/getPosition";
 import CommitteePage from "@/app/about-us/components/Committee";
 import Position from "@/app/about-us/components/Position";
 import Faq from "./components/faq";
+import getFaqs from "@/actions/getFaqs";
 
 
 export const revalidate = 0
@@ -10,6 +11,7 @@ export const revalidate = 0
 export default async function Home() {
   const committee = await getCommittees();
   const position = await getPositions();
+  const faq = await getFaqs();
   return (
     <>
       <div className='container flex-col'>
@@ -31,7 +33,7 @@ export default async function Home() {
             through ice breaking events, guest talks from tech industries and garnering new skills
             through workshops.
           </p>
-          <br/>
+          <br />
           <p>
             The Computer Science Society, in continuing this goal, will focus on creating a community of
             computer science and tech enthusiasts within the University. On top of hosting multiple
@@ -41,7 +43,7 @@ export default async function Home() {
 
         <div className='px-6'>
           <p className='title-header '>Frequently Asked <span className='title'>Question</span></p>
-          <Faq />
+          <Faq data={faq} />
         </div>
       </div>
 

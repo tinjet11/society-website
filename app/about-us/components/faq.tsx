@@ -1,6 +1,6 @@
-"use client"
-import React, { useState } from 'react'
+import React from 'react'
 import Faq_card from './faq_card';
+import { FaqType } from '@/types';
 
 const qna = [
     {
@@ -13,15 +13,19 @@ const qna = [
         answer: 'The member registration fee is RM 15',
     }
 ]
+interface Props {
+    data: FaqType[];
+}
 
-const Faq = () => {
+const Faq = ({ data }: Props) => {
     return (
-        <>
-            {qna.map((item, key) => (
-                <Faq_card key={key} question={item.question} answer={item.answer} open={item.open} />
+        <React.Fragment>
+            {data.length === 0 && <p>Faq not found</p>}
+            {data && data.map((item, key) => (
+                <Faq_card key={key} question={item.question} answer={item.answer} />
             ))}
 
-        </>
+        </React.Fragment>
     )
 }
 

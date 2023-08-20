@@ -79,3 +79,16 @@ export interface NoticeBoardType {
     buttonText: string,
     link: string,
 }
+
+export interface FaqType {
+    id: string;
+    question: string;
+    answer: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
+export interface PartnerType {
+    name: string,
+    imageUrl: string,
+}

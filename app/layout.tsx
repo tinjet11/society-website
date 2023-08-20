@@ -28,7 +28,7 @@ export default function RootLayout({
         <Providers>
           <div className="flex flex-col overflow-x-hidden h-screen">
         
-            <div><Titlebar /></div>
+            <Titlebar />
 
     
             <div className="flex">

@@ -12,8 +12,10 @@ import { ToasterProvider } from "@/providers/toast-provider";
 import LinkPlaceholder from '../ui/link-placeholder';
 import SocialMedia from '../ui/social-media';
 import Marquee from "react-fast-marquee";
+import getPartners from '@/actions/getPartners';
 
-const LandingPage = () => {
+const LandingPage = async () => {
+    const partners = await getPartners();
     return (
 
         <>
@@ -69,7 +71,7 @@ const LandingPage = () => {
                     <div className='px-6 my-3'>
                         <p className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></p>
 
-                        <Partners />
+                        <Partners data ={partners}/>
                     </div>
 
                     <hr />

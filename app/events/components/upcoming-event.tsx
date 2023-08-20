@@ -5,9 +5,7 @@ import { EventType } from '@/types';
 
 import React, { useEffect, useState } from 'react'
 import Events_card from './Events_card';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import SocialMedia from '@/components/ui/social-media';
 import LinkPlaceholder from '@/components/ui/link-placeholder';
 
 const UpcomingEvent = () => {
