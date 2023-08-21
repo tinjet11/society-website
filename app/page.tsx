@@ -15,7 +15,7 @@ import LinkPlaceholder from "@/components/ui/link-placeholder";
 import SocialMedia from "@/components/ui/social-media";
 export default async function Home() {
 
-  const partners = await getPartners();
+    const partners = await getPartners();
     return (
 
         <>
@@ -71,7 +71,7 @@ export default async function Home() {
                     <div className='px-6 my-3'>
                         <p className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></p>
 
-                        <Partners data ={partners}/>
+                        <Partners data={partners} />
                     </div>
 
                     <hr />
@@ -106,7 +106,7 @@ export default async function Home() {
                                 </div>
                             </div>
 
-                            <div className="md:basis-1/2 w-auto h-[400px]">
+                            {/*            <div className="md:basis-1/2 w-auto h-[400px]">
 
                                 <Image
                                     src='/group_photo.jpg'
@@ -121,7 +121,23 @@ export default async function Home() {
                                     loading='lazy'
                                 />
 
+                            </div> */}
+
+
+                            <div className='md:basis-1/2 flex justify-center'>
+                                <Image
+                                    src='/group_photo.jpg'
+                                    width={300}
+                                    height={300}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                    alt="image"
+                                    className="object-contain"
+                                />
                             </div>
+
 
                         </div>
 
@@ -142,5 +158,5 @@ export default async function Home() {
             </div>
         </>
 
-  );
+    );
 }

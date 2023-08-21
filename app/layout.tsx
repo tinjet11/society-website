@@ -23,10 +23,9 @@ export default function RootLayout({
   return (
 
     <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body className={inter.className}>
         <Providers>
-          <div className="flex flex-col overflow-x-hidden h-screen">
+          <div className="flex flex-col overflow-scroll h-screen w-screen">
         
             <Titlebar />
 
@@ -37,7 +36,7 @@ export default function RootLayout({
               <div className="flex-1">
                 <Tab />
                 <main
-                  className="overflow-x-hidden px-1 main"
+                  className="overflow-x-hidden main"
                 >
                   {children}
 

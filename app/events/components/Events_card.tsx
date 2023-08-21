@@ -10,7 +10,6 @@ import EventDescriptionContentList from './Event-description-list';
 import { X } from 'lucide-react';
 import { Skeleton } from '../../../components/ui/skeleton';
 import Button from '../../../components/ui/button';
-import Balancer from 'react-wrap-balancer';
 
 const Events_card = ({ id, title, description, venue, date, imageUrl, link }: EventType) => {
 
@@ -100,7 +99,7 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
 
     return (
 
-        <div className='container flex flex-col' key={id} id={id}>
+        <div className='container flex flex-col' id={id}>
 
             <div className='flex flex-col lg:flex-row p-4 gap-8 justify-center items-center'>
                 <div className='w-[250px] sm:w-[400px] h-full'>
@@ -199,8 +198,8 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                                         <hr className='my-2'></hr>
                                         {data
                                             .sort((a, b) => parseInt(a.order) - parseInt(b.order)) // Convert to numbers and sort
-                                            .map((description) => (
-                                                <div className='my-5'>
+                                            .map((description,index) => (
+                                                <div className='my-5' key={index}>
 
                                                     {isLoading ? (
                                                         <Skeleton className="w-auto h-[30px] aspect-square" />
@@ -212,7 +211,7 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
 
 
 
-                                                    <EventDescriptionContentList eventId={description.eventId} eventdescriptionId={description.id} bg='white' />
+                                                    <EventDescriptionContentList key={description.eventId} eventId={description.eventId} eventdescriptionId={description.id} bg='white' />
 
                                                 </div>
                                             ))}

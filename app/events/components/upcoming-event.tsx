@@ -46,16 +46,19 @@ const UpcomingEvent = () => {
             ) :
                 <>
                     {event && event.map((event) => (
-                        <Events_card
-                            id={event.id}
-                            title={event.title}
-                            description={event.description}
-                            date={event.date}
-                            venue={event.venue}
-                            imageUrl={event.imageUrl}
-                            link={event.link}
-                        />
+                        <React.Fragment key={event.id}>
+                            <Events_card
+                                id={event.id}
+                                title={event.title}
+                                description={event.description}
+                                date={event.date}
+                                venue={event.venue}
+                                imageUrl={event.imageUrl}
+                                link={event.link}
+                            />
+                        </React.Fragment>
                     ))}
+
 
                     {event.length === 0 && (
                         <div className='mt-3 mb-6'>

@@ -72,8 +72,8 @@ const Tab = () => {
         {explorerItems.map((item) =>
           isOpen[item.id] && (
             // Only render the tab if isOpen is true for that item's id
-            <div className={`flex items-center text-sm ${pathname === item.path ? 'content-color border-t-2 border-[#E981D9]' : 'secondary-bg-color'} flex-shrink-0`}>
-              <Link href={item.path} key={item.name} className='mr-3'>
+            <div key={item.name} className={`flex items-center text-sm ${pathname === item.path ? 'content-color border-t-2 border-[#E981D9]' : 'secondary-bg-color'} flex-shrink-0`}>
+              <Link href={item.path} className='mr-3'>
                 <div className='py-3 px-3 flex items-center text-sm'>
                 <Image
                   src={`/${item.icon}`}

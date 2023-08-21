@@ -152,8 +152,8 @@ const Explorer = () => {
           <div
             className={`py-2 cursor-pointer ${upcomingEventOpen ? 'block' : 'hidden'}`}>
 
-            {event.map((item) => (
-              <a href={`/events#${item.id}`}>
+            {event.map((item,index) => (
+              <a href={`/events#${item.id}`} key={index}>
                 <div className="ml-5 py-1 px-4 flex items-center">
                   <Image
                     src={`js_icon.svg`}
@@ -202,8 +202,8 @@ const Explorer = () => {
                 </div>
               </>}
 
-            {yearRanges.map((yearRange) => (
-              <div key={yearRange} className='mt-2'>
+            {yearRanges.map((yearRange,index) => (
+              <div key={index} className='mt-2'>
 
                 <input
                   type="checkbox"
@@ -226,9 +226,9 @@ const Explorer = () => {
 
 
                 <div className={`py-2 cursor-pointer ${selectedYearRanges[yearRange] ? 'block' : 'hidden'}`}>
-                  {blog.filter((blog) => blog.year === yearRange).map((item) =>
+                  {blog.filter((blog) => blog.year === yearRange).map((item,index) =>
                   (
-                    <a href={`/events#${item.id}`}>
+                    <a href={`/events#${item.id}`} key={index}>
                       <div className="ml-5 py-1 px-4 flex items-center">
                         <Image
                           src={`js_icon.svg`}
