@@ -1,17 +1,38 @@
-"use client"
-import { NavVertical, Temp ,NavHorizontal } from "@/components";
+import getFaqs from "@/actions/getFaqs";
+import LinkPlaceholder from "@/components/ui/link-placeholder";
+import Faq from "./components/faq";
 
-export default function Home() {
+export const revalidate = 0
 
+export default async function Home() {
+  const faq = await getFaqs();
   return (
     <>
-      <NavVertical />
+      <div className="container">
 
-        <NavHorizontal />
+      <div className="flex flex-col">
 
-        <div className="lg:ml-[250px]">
-        <Temp/>
+        <div className="px-6">
+        <p className='title-header'>Want to <span className='text-[#E981D9]'>Collaborate?</span></p>
+        We are open for collaboration or sponsorship for events related to tech. Feel free to email 
+        to <LinkPlaceholder text="president@unmcss.com" url=""/>
         </div>
+
+        <div className="px-6">
+        <p className='title-header'>How to <span className='title'>Reach</span> us?</p>
+
+        Email: 
+        </div>
+
+        <div className='px-6'>
+          <p className='title-header '>Frequently Asked <span className='title'>Question</span></p>
+          <Faq data={faq} />
+        </div>
+
+      </div>
+      </div>
     </>
+
+
   );
 }
