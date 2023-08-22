@@ -11,7 +11,7 @@ interface Props {
 const CommitteePage = ({ data }: Props) => {
 
     return (
-        <div className='container'>
+       
             <div className='flex flex-col m-2 rounded-lg p-4'>
 
                 {data.length === 0 && <p> Follow us on <LinkPlaceholder text='social media' url='https://linktr.ee/unmcss' /> for latest update!</p>}
@@ -35,8 +35,6 @@ const CommitteePage = ({ data }: Props) => {
                 </div>
 
             </div>
-
-        </div>
 
     )
 }

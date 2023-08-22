@@ -13,11 +13,10 @@ const Footer = () => {
     return (
         <>
             {pathname != "/default" && (
-                <div className='container'>
 
                     <footer className="bg-[#4A4772] p-4 text-base text-[#E8E6E3]">
 
-                        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
 
                             <div className='flex flex-col gap-y-4 mt-3 md:basis-3/4'>
 
@@ -71,7 +70,7 @@ const Footer = () => {
 
                         </div>
                     </footer>
-                </div>
+
             )
             }
         </>

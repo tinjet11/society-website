@@ -1,3 +1,5 @@
+"use client"
+
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers';
@@ -7,6 +9,8 @@ import Explorer from '@/components/navigation/explorer';
 import Tab from '@/components/navigation/tab';
 import NavVertical from '@/components/navigation/NavVertical';
 import Footer from '@/components/footer';
+import ScrollTop from '@/components/scroll-top';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,35 +24,35 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
 
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{ overflow: 'hidden' }}>
+        <ScrollTop />
         <Providers>
-          <div className="flex flex-col overflow-scroll h-screen w-screen">
-        
-            <Titlebar />
+          <Titlebar />
 
-    
-            <div className="flex">
-              <NavVertical />
-              <Explorer />
-              <div className="flex-1">
-                <Tab />
-                <main
-                  className="overflow-x-hidden main"
-                >
-                  {children}
+          <div className="flex">
+            <NavVertical />
+            <Explorer />
+            <div style={{ width: '100%' }}  >
+              <Tab />
+              <main
+                className="overflow-x-hidden main flex-1"
+              >
+                {children}
 
-                  <div className='px-3 my-8'>
-                <Footer />
+                <div className='my-8'>
+                  <Footer />
+                </div>
+              </main>
             </div>
-                </main>
-              </div>
-            </div>
-            <Bottombar />
-
           </div>
+          <Bottombar />
+
+
         </Providers>
       </body>
     </html>

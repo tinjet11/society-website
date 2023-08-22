@@ -6,7 +6,7 @@ import { explorerItems } from "./explorer";
 
 export default function NavVertical() {
 
-    const pathname = usePathname()
+    const pathname = usePathname()  
     return (
         <div className="sidebar w-[40px] sm:w-[70px] flex flex-col items-center secondary-bg-color"
         style={{ height: `calc(100vh - 30px -25px)` }} >

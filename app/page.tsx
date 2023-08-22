@@ -19,7 +19,6 @@ export default async function Home() {
     return (
 
         <>
-            <div className="container">
                 <Marquee speed={30}>
                     <NoticeBoard />
                 </Marquee>
@@ -32,7 +31,7 @@ export default async function Home() {
                             <h1 className="header">Building  <span className='header-highlight'>Bytes,</span> Creating <span className='text-[#E981D9]'>Bonds</span></h1>
                         </div>
                         <div className='max-w-[900px]'>
-                            <h1 className="sub-header sm:text-center text-left">A dynamic tech community, uniting minds that breathe innovation and code.
+                            <h1 className="sub-header md:text-center text-left">A dynamic tech community, uniting minds that breathe innovation and code.
                                 From beginners to experts, we journey together in exploring
                                 the digital world. Based at the University of Nottingham Malaysia.</h1>
                         </div>
@@ -66,15 +65,14 @@ export default async function Home() {
                         <UpcomingEvent />
                     </div>
 
-                    <hr />
 
-                    <div className='px-6 my-3'>
+                    <div className='px-6'>
                         <p className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></p>
 
                         <Partners data={partners} />
                     </div>
 
-                    <hr />
+            
 
 
                     <div className='px-6'>
@@ -155,7 +153,7 @@ export default async function Home() {
 
                 </div>
 
-            </div>
+       
         </>
 
     );

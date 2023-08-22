@@ -86,7 +86,7 @@ const Tab = () => {
                 </div>
                
               </Link>
-              <button onClick={() => handleCloseTab(item.id)}>
+              <button className='md:block hidden' onClick={() => handleCloseTab(item.id)}>
                 <X className='mr-3 h-4 w-4' />
               </button>
             </div>

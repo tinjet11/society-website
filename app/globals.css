@@ -27,8 +27,8 @@
 
 [data-theme="dark"] body {
   font-family: proxima-nova, sans-serif;
-font-style: normal;
-font-weight: 400;
+  font-style: normal;
+  font-weight: 400;
   @apply bg-[#2E2C45] text-white text-lg
 }
 
@@ -71,12 +71,7 @@ font-weight: 400;
 }
 
 .container {
-  @apply px-2 mx-auto
-}
-
-.main {
-  width: calc(85vw - 16px);
-  height: calc(85vh - 30px);
+  @apply px-1 mx-auto
 }
 
 
@@ -88,37 +83,49 @@ font-weight: 400;
   object-fit: cover;
 }
 
-@media screen and (max-width: 640px) {
+
+
+.main {
+  width: calc(85vw - 16px);
+  height: calc(85vh - 30px);
+}
+
+
+@media screen and (max-width: 767px) {
   .tabs {
-    width: 95vw;
+    width: 100vw;
   }
 
-  .sidebar {
-    height: 100vh
+   .sidebar {
+    height: 100vh;
+    display:none;
   }
-
+ 
   .title-bar {
     width: 100vw;
   }
 
   .main {
-    width: 95vw;
+    width: 99vw;
   }
 }
 
-/* @media screen and (max-width: 1024px) {
-  .countdown-big {
-    display: none;
+@media screen and (min-width: 768px) {
+
+  .sidebar {
+    height: 100vh;
   }
 
+  .title-bar {
+    width: 100vw;
+  }
 }
 
-@media screen and (min-width: 1024px) {
-
-  .countdown-small {
-    display: none;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main {
+    width: calc(100vw - 250px);
   }
-} */
+}
 
 /* Define the default width for gallery-display */
 .gallery-display {
