@@ -1,5 +1,5 @@
 import React from 'react'
-import Faq_card from './faq_card';
+import Faq_card from '../../contact-us/components/faq_card';
 import { FaqType } from '@/types';
 
 const qna = [

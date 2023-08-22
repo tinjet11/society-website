@@ -2,7 +2,6 @@ import getCommittees from "@/actions/getCommittee";
 import getPositions from "@/actions/getPosition";
 import CommitteePage from "@/app/about-us/components/Committee";
 import Position from "@/app/about-us/components/Position";
-import Faq from "./components/faq";
 import getFaqs from "@/actions/getFaqs";
 
 
@@ -11,15 +10,14 @@ export const revalidate = 0
 export default async function Home() {
   const committee = await getCommittees();
   const position = await getPositions();
-  const faq = await getFaqs();
   return (
     <>
       <div className='container flex-col'>
-        <div className="px-6">
+        <div className="pl-6">
           <p className='title-header '>Meet our <span className="title">Team</span></p>
           <CommitteePage data={committee} />
         </div>
-        <div className="px-6">
+        <div className="pl-6">
           <p className='title-header '>Open <span className="title">Positions!</span></p>
           <Position data={position} />
         </div>
@@ -41,10 +39,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className='px-6'>
-          <p className='title-header '>Frequently Asked <span className='title'>Question</span></p>
-          <Faq data={faq} />
-        </div>
+
       </div>
 
     </>

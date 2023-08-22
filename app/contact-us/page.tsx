@@ -1,11 +1,15 @@
+import getFaqs from "@/actions/getFaqs";
 import LinkPlaceholder from "@/components/ui/link-placeholder";
-import Link from "next/link";
+import Faq from "./components/faq";
 
-export default function Home() {
+export const revalidate = 0
 
+export default async function Home() {
+  const faq = await getFaqs();
   return (
     <>
-      <div className="container"></div>
+      <div className="container">
+
       <div className="flex flex-col">
 
         <div className="px-6">
@@ -18,10 +22,14 @@ export default function Home() {
         <p className='title-header'>How to <span className='title'>Reach</span> us?</p>
 
         Email: 
-
-
         </div>
 
+        <div className='px-6'>
+          <p className='title-header '>Frequently Asked <span className='title'>Question</span></p>
+          <Faq data={faq} />
+        </div>
+
+      </div>
       </div>
     </>
 
