@@ -8,6 +8,8 @@ import Tab from '@/components/navigation/tab';
 import NavVertical from '@/components/navigation/NavVertical';
 import Footer from '@/components/footer';
 import ScrollTop from '@/components/scroll-top';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,32 +29,36 @@ export default function RootLayout({
   return (
 
     <html lang="en">
-      <body className={inter.className} style={{ overflow: 'hidden' }}>
-        <ScrollTop />
-        <Providers>
-          <Titlebar />
+      <Suspense fallback={<Loading />}>
+        <body className={inter.className} style={{ overflow: 'hidden' }}>
 
-          <div className="flex">
-            <NavVertical />
-            <Explorer />
-            <div style={{ width: '100%' }}  >
-              <Tab />
-              <main
-                className="overflow-x-hidden main flex-1"
-              >
-                {children}
 
-                <div className='my-8'>
-                  <Footer />
-                </div>
-              </main>
+          <ScrollTop />
+          <Providers>
+            <Titlebar />
+
+            <div className="flex">
+              <NavVertical />
+              <Explorer />
+              <div style={{ width: '100%' }}  >
+                <Tab />
+                <main
+                  className="overflow-x-hidden main flex-1"
+                >
+                  {children}
+
+                  <div className='my-8'>
+                    <Footer />
+                  </div>
+                </main>
+              </div>
             </div>
-          </div>
-          <Bottombar />
+            <Bottombar />
 
 
-        </Providers>
-      </body>
+          </Providers>
+        </body>
+      </Suspense>
     </html>
   )
 }

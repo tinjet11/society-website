@@ -10,76 +10,18 @@ import EventDescriptionContentList from './Event-description-list';
 import { X } from 'lucide-react';
 import { Skeleton } from '../../../components/ui/skeleton';
 import Button from '../../../components/ui/button';
+import CountdownTimer from './countdown-timer';
 
 const Events_card = ({ id, title, description, venue, date, imageUrl, link }: EventType) => {
 
-
-    const [partyTime, setPartyTime] = useState(false);
-    const [days, setDays] = useState(0);
-    const [hours, setHours] = useState(0);
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(0);
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [data, setData] = useState<EventDescriptionTitleType[]>([]);
     const [isMounted, setIsMounted] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const malaysiaTimeZone = "Asia/Kuala_Lumpur";
     const formatteddate = new Date(date).toLocaleString("en-US", { timeZone: malaysiaTimeZone });
 
-    useEffect(() => {
-        const target = new Date(formatteddate);
-
-        const interval = setInterval(() => {
-            const now = new Date();
-            const difference = target.getTime() - now.getTime();
-
-            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-            setDays(d);
-
-            const h = Math.floor(
-                (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            );
-            setHours(h);
-
-            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            setMinutes(m);
-
-            const s = Math.floor((difference % (1000 * 60)) / 1000);
-            setSeconds(s);
-
-            if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
-                setPartyTime(true);
-            }
-        }, 1000);
-
-
-
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
-
-    useEffect(() => {
-        const updateWindowDimensions = () => {
-            setIsSmallScreen(window.innerWidth < 768);
-        };
-
-        setIsSmallScreen(false)
-
-        updateWindowDimensions(); // Set initial value
-
-        window.addEventListener("resize", updateWindowDimensions);
-
-        return () => {
-            window.removeEventListener("resize", updateWindowDimensions);
-        };
-    }, []);
-
-
-
-    const [data, setData] = useState<EventDescriptionTitleType[]>([]);
-
-    const [isOpen, setIsOpen] = useState(false)
     useEffect(() => {
         setIsMounted(true);
 
@@ -112,59 +54,23 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                     />
                 </div>
 
-               
+
 
 
                 <div className='flex flex-col justify-between p-2'>
 
-                <div className="flex flex-row justify-center w-auto p-4 items-center mb-4 rounded-2xl border countdown-small">
-                    <div className="flex items-center">
-                        <span className="text-2xl md:text-3xl font-bold">{days}</span>
-                        <span className="card-subtitle ml-1">
-                            {isSmallScreen ? `D` : `Days`}
-                        </span>
-                    </div>
-                    <span className="mx-1 md:mx-2 card-subtitle">:</span>
-                    <div className="flex items-center">
-                        <span className="text-2xl md:text-3xl font-bold">{hours}</span>
-                        <span className="card-subtitle ml-1">
-                            {isSmallScreen ? `H` : `Hours`}
-                        </span>
-                    </div>
-                    <span className="mx-1 md:mx-2 card-subtitle">:</span>
-                    <div className="flex items-center">
-                        <span className="text-2xl md:text-3xl font-bold">{minutes}</span>
-                        <span className="card-subtitle ml-1">
-                            {isSmallScreen ? `M` : `Minutes`}
-                        </span>
-                    </div>
-                    <span className="mx-1 md:mx-2 card-subtitle">:</span>
-                    <div className="flex items-center">
-                        <span className="text-2xl md:text-3xl font-bold">{seconds}</span>
-                        <span className="card-subtitle ml-1">
-                            {isSmallScreen ? `S` : `Seconds`}
-                        </span>
-                    </div>
-                </div>
+                    <CountdownTimer date={formatteddate} />
 
                     <div className='items-start'>
-                        {isLoading ? (
-                            <Skeleton className="w-[300px] h-[30px] aspect-square" />
-                        ) :
-                            <h1 className='title text-3xl font-bold mb-3'>{title}</h1>
-                        }
+                        <h1 className='title text-3xl font-bold mb-3'>{title}</h1>
+
 
 
                         <div className='mb-3'>
 
-                            {isLoading ? (
-                                <Skeleton className="w-[300px] h-[30px] aspect-square" />
-                            ) :
-                                <div className=''>
-                                    <p className='text-base' dangerouslySetInnerHTML={{ __html: description }} />
-                                </div>
-
-                            }
+                            <div className=''>
+                                <p className='text-base' dangerouslySetInnerHTML={{ __html: description }} />
+                            </div>
                         </div>
 
                         <Dialog
@@ -198,7 +104,7 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                                         <hr className='my-2'></hr>
                                         {data
                                             .sort((a, b) => parseInt(a.order) - parseInt(b.order)) // Convert to numbers and sort
-                                            .map((description,index) => (
+                                            .map((description, index) => (
                                                 <div className='my-5' key={index}>
 
                                                     {isLoading ? (
@@ -232,7 +138,7 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
 
                     <div className='flex flex-row justify-end mt-4 gap-4 mb-12 lg:mb-0'>
                         <div className='flex-col'>
-                          {/*   <p className='my-3'><Balancer>Wanna know more about the workshop?</Balancer></p> */}
+                            {/*   <p className='my-3'><Balancer>Wanna know more about the workshop?</Balancer></p> */}
                             <button onClick={() => setIsOpen(true)} className='button'>
                                 More Info
                             </button>
@@ -245,7 +151,7 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                             </Link>
                         </div>
                     </div>
-{/* 
+                    {/* 
                     <div className="flex flex-row justify-center w-auto p-4 items-center mt-8 mb-4 rounded-2xl border countdown-big">
                         <div className="flex items-center">
                             <span className="text-2xl md:text-3xl font-bold">{days}</span>

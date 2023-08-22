@@ -1,16 +1,15 @@
-"use client"
-import getEvents from '@/actions/getEvent';
-import { Skeleton } from '@/components/ui/skeleton';
 import { EventType } from '@/types';
-
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Events_card from './Events_card';
-import { usePathname } from 'next/navigation';
 import LinkPlaceholder from '@/components/ui/link-placeholder';
 
-const UpcomingEvent = () => {
+interface Props{
+    data: EventType[];
+}
 
-    const [isLoading, setIsLoading] = useState(true);
+const UpcomingEvent = ({data}: Props) => {
+
+/*     const [isLoading, setIsLoading] = useState(true);
     const [event, setEvent] = useState<EventType[]>([])
     const [isMounted, setIsMounted] = useState(false);
 
@@ -36,16 +35,12 @@ const UpcomingEvent = () => {
     if (!isMounted) {
         return null;
     }
-
+ */
 
 
     return (
-        <>
-            {isLoading ? (
-                <Skeleton className="w-full h-[500px] mt-4 aspect-square" />
-            ) :
                 <>
-                    {event && event.map((event) => (
+                    {data && data.map((event) => (
                         <React.Fragment key={event.id}>
                             <Events_card
                                 id={event.id}
@@ -60,7 +55,7 @@ const UpcomingEvent = () => {
                     ))}
 
 
-                    {event.length === 0 && (
+                    {data.length === 0 && (
                         <div className='mt-3 mb-6'>
                             <p>No upcoming event available at this time.<br />
                                 Follow us on <LinkPlaceholder text='social media' url='https://linktr.ee/unmcss' /> or subscribe to our newsletter for latest update!
@@ -68,9 +63,6 @@ const UpcomingEvent = () => {
                         </div>
                     )}
                 </>
-            }
-
-        </>
     )
 }
 
