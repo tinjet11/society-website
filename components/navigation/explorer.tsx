@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import ChevronRight from '../icons/ChevronRight';
 import { CalendarDays, Home, Mail, Users } from 'lucide-react';
 import { BlogType, EventType } from '@/types';
 import getBlogs from '@/actions/getBlogs';
@@ -44,29 +43,6 @@ export const explorerItems = [
   },
 ];
 
-
-function useSelectedYearRanges(initialYearRanges: string[]) {
-  const [selectedYearRanges, setSelectedYearRanges] = useState<{ [yearRange: string]: boolean }>(() => {
-    const initialState: { [yearRange: string]: boolean } = {};
-    initialYearRanges.forEach((yearRange) => {
-      initialState[yearRange] = true;
-    });
-    return initialState;
-  });
-
-
-  const handleYearRangeInputChange = (yearRange: string) => {
-    setSelectedYearRanges((prevSelectedYearRanges) => ({
-      ...prevSelectedYearRanges,
-      [yearRange]: !prevSelectedYearRanges[yearRange],
-    }));
-  };
-
-  return {
-    selectedYearRanges,
-    handleYearRangeInputChange,
-  };
-}
 
 const Explorer = () => {
 
