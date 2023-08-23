@@ -1,4 +1,4 @@
-"use client"
+/* "use client"
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -20,19 +20,17 @@ const Tab = () => {
   useEffect(() => {
     const initialIsOpen: { [key: number]: boolean } = {};
     explorerItems.forEach((item) => {
-      initialIsOpen[item.id] = true; // All tabs are initially open
+      initialIsOpen[item.id] = true;
     });
     setIsOpen(initialIsOpen);
   }, []);
 
-  // Update isOpen state when pathname changes
   useEffect(() => {
     const matchingItem = explorerItems.find((item) => item.path === pathname);
 
     setCurrentPathName(pathname)
 
     if (matchingItem) {
-      // If a matching item is found, update the isOpen state with its id
       setIsOpen((prevOpen) => ({
         ...prevOpen,
         [matchingItem.id]: true,
@@ -51,16 +49,13 @@ const Tab = () => {
 
     if (nextTab) {
       setCurrentPathName(nextTab.path)
-    //  console.log("success")
     } else {
       setCurrentPathName('/default')
-     // console.log("error")
     }
   };
 
   useEffect(() => {
     router.push(currentPathName);
-  //  console.log('currentPathName:', currentPathName);
   }, [currentPathName]);
 
 
@@ -91,6 +86,30 @@ const Tab = () => {
               </button>
             </div>
           )
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Tab;
+ */
+
+"use client"
+import React from 'react';
+import { explorerItems } from './explorer';
+import TabComponent from './tab-component';
+
+export const revalidate = 0;
+const Tab = () => {
+
+  return (
+    <div className='tabs title-bar-text pr-2 flex secondary-bg-color overflow-x-auto'>
+      <div className="cursor-pointer flex">
+        {explorerItems.map((item) =>
+        (
+          <TabComponent key={item.id} name={item.name} path={item.path} icon={item.icon} id={item.id} />
+        )
         )}
       </div>
     </div>
