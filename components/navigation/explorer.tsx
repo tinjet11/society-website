@@ -14,28 +14,32 @@ export const explorerItems = [
     path: '/',
     icon: 'react_icon.svg',
     icons: <Home />,
-    id: 1,
+    id: 0,
+    isOpen: true,
   },
   {
     name: 'about.html',
     path: '/about-us',
     icon: 'html_icon.svg',
     icons: <Users />,
-    id: 2
+    id: 1,
+    isOpen: true,
   },
   {
     name: 'contact.css',
     path: '/contact-us',
     icon: 'css_icon.svg',
     icons: <Mail />,
-    id: 3
+    id: 2,
+    isOpen: true,
   },
   {
     name: 'events.js',
     path: '/events',
     icon: 'js_icon.svg',
     icons: <CalendarDays />,
-    id: 4
+    id: 3,
+    isOpen: true,
   },
 ];
 
