@@ -13,8 +13,8 @@ const Partners = ({data}:Props) => {
       <Marquee>
         {data.map((item, index) => (
           <div key={index}>
-            <div className="w-auto h-[200px]">
-              <div className="object-contain w-full h-full flex justify-center items-center p-2">
+            <div className="w-[300px] h-[300px]">
+              <div className="object-contain h-full flex justify-center items-center p-2">
                 <Image
                   src={item.imageUrl}
                   alt="partner Img"
