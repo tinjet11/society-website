@@ -15,6 +15,8 @@ import LinkPlaceholder from "@/components/ui/link-placeholder";
 import SocialMedia from "@/components/ui/social-media";
 import getEvents from '@/actions/getEvent';
 import getBlogs from '@/actions/getBlogs';
+
+export const revalidate = 0
 export default async function Home() {
 
     const partners = await getPartners();
