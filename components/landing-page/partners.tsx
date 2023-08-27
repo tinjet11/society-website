@@ -20,8 +20,9 @@ const Partners = ({data}:Props) => {
                   alt="partner Img"
                   sizes="100vw"
                   style={{
-                    width: '100%',
+                    width: 'auto',
                     height: 'auto',
+
                   }}
                   width={500}
                   height={300}

@@ -76,7 +76,11 @@ body {
 
 
 .button {
-  @apply bg-[#E981D9] hover:bg-[#DCA7EE] text-white font-bold py-2 px-4 rounded h-full
+  @apply bg-[#BF24A7] hover:bg-[#E981D9] text-white font-bold py-2 px-4 rounded h-full
+}
+
+.button-secondary {
+  @apply border-solid border border-[#66DA91] hover:bg-[#66DA91] text-white font-bold py-2 px-4 rounded h-full
 }
 
 .blog-image {

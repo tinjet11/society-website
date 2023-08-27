@@ -14,7 +14,7 @@ export default async function Home() {
     <>
       <div className='container flex-col'>
         <div className="pl-6">
-          <p className='title-header '>Meet our <span className="title">Team</span></p>
+          <p id="team" className='title-header '>Meet our <span className="title">Team</span></p>
           <CommitteePage data={committee} />
         </div>
         <div className="pl-6">

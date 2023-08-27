@@ -3,6 +3,8 @@ import Link from 'next/link'
 import React from 'react'
 import LinkPlaceholder from '../ui/link-placeholder'
 
+// Importing images statistically
+import groupPhoto from '/public/images/group_photo_pacman.jpg'
 
 
 const   Intro = () => {
@@ -20,7 +22,7 @@ const   Intro = () => {
                     Having members from different disciplines within the University, our workshops and events cater to 
                     different skill levels. Whether you're a seasoned coder or a tech newcomer, 
                     our activities are designed to resonate with everyone. 
-                    Connect with us in <LinkPlaceholder url='https://www.instagram.com/unm.css/' text='our discord server'/>. 
+                    Connect with us in <LinkPlaceholder url='https://discord.com/invite/SfyEyMcQrm' text='our discord server'/>. 
                     </p>
                 </div>
 
@@ -28,15 +30,15 @@ const   Intro = () => {
 
             <div className='md:basis-1/2 flex justify-center'>
                 <Image
-                    src='/group_photo.jpg'
-                    width={300}
-                    height={300}
+                    src={groupPhoto}
                     style={{
                         width: '100%',
                         height: '100%',
                     }}
-                    alt="image"
+                    alt="CSS Group Image"
                     className="object-contain"
+                    placeholder="blur"
+                    quality={60}
                 />
             </div>
 
