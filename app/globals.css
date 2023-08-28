@@ -9,18 +9,6 @@
  #E981D9 - another pink
 
  */
-
- @font-face {
-  font-family: "Consolas";
-  src: url('/fonts/Consolas.ttf');
- }
-
- @font-face {
-  font-family: 'ProximaNova'; 
-  src: url('/fonts/ProximaNova.otf') format('opentype');
-}
-
-
 .content-color {
   @apply bg-[#2E2C45]
 }
@@ -53,15 +41,14 @@ body {
 
 .title-header {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: normal;
 
-  @apply my-8
+  @apply my-8 font-extrabold
 }
 
 .title-bar-text {
   color: #fff;
-  font-family: 'Consolas';
   font-size: 0.85rem;
 }
 

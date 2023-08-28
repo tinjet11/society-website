@@ -3,9 +3,14 @@ import getPositions from "@/actions/getPosition";
 import CommitteePage from "@/app/about-us/components/Committee";
 import Position from "@/app/about-us/components/Position";
 import getFaqs from "@/actions/getFaqs";
+import { Metadata } from "next";
 
 
 export const revalidate = 0
+export const metadata:Metadata = {
+  title: 'About Us | UNM Computer Science Society',
+  description:'We’re a community of programmers and tech enthusiasts, at the University of Nottingham Malaysia!'
+}
 
 export default async function Home() {
   const committee = await getCommittees();
@@ -14,16 +19,16 @@ export default async function Home() {
     <>
       <div className='container flex-col'>
         <div className="pl-6">
-          <p id="team" className='title-header '>Meet our <span className="title">Team</span></p>
+          <h1 id="team" className='title-header '>Meet our <span className="title">Team</span></h1>
           <CommitteePage data={committee} />
         </div>
         <div className="pl-6">
-          <p className='title-header '>Open <span className="title">Positions!</span></p>
+          <h1 className='title-header'>Open <span className="title">Positions!</span></h1>
           <Position data={position} />
         </div>
 
         <div className='px-6'>
-          <p className='title-header '>Our <span className="title">Mission</span> and <span className='text-[#E981D9]'>Vision</span></p>
+          <h1 className='title-header'>Our <span className="title">Mission</span> and <span className='text-[#E981D9]'>Vision</span></h1>
           <p>
             CSS has focused towards a technical approach in improving the Computer Science student life. Provided through workshops, talks and industrial trips with various collaborations, CSS proved to be a society where computer science students could enhance their knowledge and insight within the realm of computer science.
             As a staple tradition, CSS will be collaborating with the School of Computer Science (SoCS)

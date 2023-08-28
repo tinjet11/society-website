@@ -1,5 +1,4 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { Providers } from './providers';
 import Titlebar from '@/components/navigation/title-bar';
 import Bottombar from '@/components/navigation/bottom-bar';
@@ -10,14 +9,19 @@ import Footer from '@/components/footer';
 import ScrollTop from '@/components/scroll-top';
 import { Suspense } from 'react';
 import Loading from './loading';
+import localFont from 'next/font/local';
+import Head from 'next/head';
 
+export const consolas = localFont({
+  src: './Consolas.ttf',
+  display: 'swap',
+})
 
-const inter = Inter({ subsets: ['latin'] })
+export const proximanova = localFont({
+  src: './ProximaNova.otf',
+  display: 'swap',
+})
 
-export const metadata = {
-  title: 'Computer Science Society',
-  description: 'University of Nottingham Malaysia',
-}
 
 export default function RootLayout({
   children,
@@ -30,13 +34,16 @@ export default function RootLayout({
 
     <html lang="en">
       <Suspense fallback={<Loading />}>
-        <head>
+{/*         <head>
         <script src="https://tally.so/widgets/embed.js"></script>
-        </head>
-        <body className={inter.className} style={{ overflow: 'hidden' }}>
+        </head> */}
+        <Head>
+        <meta property="og:image" content="/public/opengraph-CSS_dark copy.png"></meta>
+        </Head>
+        <body className={proximanova.className} style={{ overflow: 'hidden' }}>
           <ScrollTop />
           <Providers>
-            <Titlebar />
+                  <Titlebar  />
 
             <div className="flex">
               <NavVertical />

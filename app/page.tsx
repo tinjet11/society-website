@@ -16,10 +16,16 @@ import LinkPlaceholder from "@/components/ui/link-placeholder";
 import SocialMedia from "@/components/ui/social-media";
 import getEvents from '@/actions/getEvent';
 import getBlogs from '@/actions/getBlogs';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 export const revalidate = 0
+
+export const metadata:Metadata = {
+    title: 'Home | UNM Computer Science Society',
+    description:'Explore our latest event and announcement in our official website'
+}
+
 export default async function Home() {
     const partners = await getPartners();
     const event = await getEvents();
@@ -49,12 +55,9 @@ export default async function Home() {
                         <Link href="/contact-us" key="Collaborate CTA"><button className='button-secondary'>Collaborate with Us</button></Link>
                     </div>
                 </div>
-                {/* 
-                <NoticeBoard />
 
- */}
                 <div className='px-6'>
-                    <p className='title-header'>Who are <span className='title'>we</span></p>
+                    <h1 className='title-header'>Who are <span className='title'>we</span></h1>
 
                     <Intro />
 
@@ -62,20 +65,20 @@ export default async function Home() {
 
 
                 <div className='px-6'>
-                    <p className='title-header'>What's <span className='title'>happening?</span></p>
+                    <h1 className='title-header'>What's <span className='title'>happening?</span></h1>
                     <Happening />
 
                 </div>
 
                 <div className='px-6'>
-                    <p className='title-header'>Our Upcoming <span className='title'>Events</span></p>
+                    <h1 className='title-header'>Our Upcoming <span className='title'>Events</span></h1>
 
                     <UpcomingEvent data={event} />
                 </div>
 
 
                 <div className='px-6'>
-                    <p className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></p>
+                    <h1 className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></h1>
 
                     <Partners data={partners} />
                 </div>
@@ -137,6 +140,8 @@ export default async function Home() {
                                     width: '100%',
                                     height: '100%',
                                 }}
+                                width={400}
+                                height={400}
                                 alt="Picture of participants in Intro to Web3"
                                 className="object-contain"
                                 placeholder='blur'

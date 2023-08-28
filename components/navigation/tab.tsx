@@ -99,12 +99,13 @@ export default Tab;
 import React from 'react';
 import { explorerItems } from './explorer';
 import TabComponent from './tab-component';
+import { consolas } from '@/app/layout';
 
 export const revalidate = 0;
 const Tab = () => {
 
   return (
-    <div className='tabs title-bar-text pr-2 flex secondary-bg-color overflow-x-auto'>
+    <div className={`${consolas.className}  tabs title-bar-text pr-2 flex secondary-bg-color overflow-x-auto`}>
       <div className="cursor-pointer flex">
         {explorerItems.map((item) =>
         (
