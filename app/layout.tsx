@@ -10,6 +10,7 @@ import ScrollTop from '@/components/scroll-top';
 import { Suspense } from 'react';
 import Loading from './loading';
 import localFont from 'next/font/local';
+import Head from 'next/head';
 
 export const consolas = localFont({
   src: './Consolas.ttf',
@@ -36,6 +37,9 @@ export default function RootLayout({
 {/*         <head>
         <script src="https://tally.so/widgets/embed.js"></script>
         </head> */}
+        <Head>
+        <meta property="og:image" content="/public/opengraph-CSS_dark copy.png"></meta>
+        </Head>
         <body className={proximanova.className} style={{ overflow: 'hidden' }}>
           <ScrollTop />
           <Providers>
