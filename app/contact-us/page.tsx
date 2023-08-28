@@ -11,7 +11,8 @@ export const metadata:Metadata = {
 }
 
 export default async function Home() {
-  const faq = await getFaqs();
+  var faq = await getFaqs();
+  faq = faq.reverse()
   return (
     <>
       <div className="container">
@@ -45,7 +46,7 @@ export default async function Home() {
           </div>
 
           <div className='px-6'>
-            <h1 className='title-header '>Frequently Asked <span className='title'>Questions</span></h1>
+            <h1 className='title-header '>Frequently Asked <span className='text-[#E981D9]'>Questions</span></h1>
             If you have any questions, suggestions, or anything else, don’t hesitate to get in touch with us. We aim to respond to all messages within 24 hours, but it’s possible that we may miss one. If we don’t respond after a couple of days, please send another message!
 
             <Faq data={faq} />

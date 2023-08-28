@@ -34,9 +34,6 @@ export default function RootLayout({
 
     <html lang="en">
       <Suspense fallback={<Loading />}>
-{/*         <head>
-        <script src="https://tally.so/widgets/embed.js"></script>
-        </head> */}
         <Head>
         <meta property="og:image" content="/public/opengraph-CSS_dark copy.png"></meta>
         </Head>

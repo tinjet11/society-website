@@ -23,7 +23,7 @@ export const revalidate = 0
 
 export const metadata:Metadata = {
     title: 'Home | UNM Computer Science Society',
-    description:'Explore our latest event and announcement in our official website'
+    description:'Explore our latest events and announcements in our official website'
 }
 
 export default async function Home() {

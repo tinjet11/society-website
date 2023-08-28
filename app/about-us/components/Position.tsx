@@ -10,7 +10,7 @@ const Position = ({ data }: Props) => {
     return (
         <>
             <div className='flex flex-col m-2 rounded-lg p-4'>
-                {data.length === 0 && <p>No position open for apply now.</p>}
+                {data.length === 0 && <p>No positions open right now. Keep an eye out!</p>}
                 {data &&
                         data.map((position) => (
                             <Position_card
