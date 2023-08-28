@@ -64,7 +64,7 @@ const NoticeBoard = () => {
       } */}
       <p>
         {noticeboard.map((item,index) => (
-          <span key={index} className='mx-3'> {item.title}. {item.description}. <LinkPlaceholder text={item.buttonText} url={item.link} /></span>
+          <span key={index} className='mx-3'> {item.title}. {item.description}. <LinkPlaceholder text={item.buttonText} url={item.link} target="_self"/></span>
         ))}
       </p>
 

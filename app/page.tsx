@@ -3,6 +3,7 @@ import PreviousEvent from '@/app/events/components/previous-event'
 import UpcomingEvent from '@/app/events/components/upcoming-event'
 import NoticeBoard from "@/components/landing-page/noticeboard";
 import Image from 'next/image';
+import final_group_photo from '/public/images/web3_seats.jpg'
 
 import EmailSubscriptionForm from "@/app/contact-us/components/subscription-form";
 import { ToasterProvider } from "@/providers/toast-provider";
@@ -15,6 +16,8 @@ import LinkPlaceholder from "@/components/ui/link-placeholder";
 import SocialMedia from "@/components/ui/social-media";
 import getEvents from '@/actions/getEvent';
 import getBlogs from '@/actions/getBlogs';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const revalidate = 0
@@ -25,12 +28,11 @@ export const metadata:Metadata = {
 }
 
 export default async function Home() {
-
     const partners = await getPartners();
     const event = await getEvents();
     const blogs = await getBlogs();
     return (
-
+            
         <>
             <Marquee speed={30}>
                 <NoticeBoard />
@@ -50,8 +52,8 @@ export default async function Home() {
                     </div>
 
                     <div className='self-start sm:self-center mt-4 flex gap-x-8 gap-y-4 flex-col sm:flex-row'>
-                        <button className='button'>Discover Event</button>
-                        <button className='button'>Collaborate with Us</button>
+                        <Link href="/events" key="Event CTA"><button className='button' >Discover Events</button></Link>
+                        <Link href="/contact-us" key="Collaborate CTA"><button className='button-secondary'>Collaborate with Us</button></Link>
                     </div>
                 </div>
                 {/* 
@@ -67,7 +69,7 @@ export default async function Home() {
 
 
                 <div className='px-6'>
-                    <p className='title-header'>What's <span className='title'>happenning?</span></p>
+                    <p className='title-header'>What's <span className='title'>happening?</span></p>
                     <Happening />
 
                 </div>
@@ -95,7 +97,7 @@ export default async function Home() {
                         <div className='flex flex-col gap-y-4 md:basis-1/2'>
                             <div>
                                 <p>Get to know us better through our social media pages! We also regularly post and publish news
-                                    about <LinkPlaceholder text='events' url='/events' /> and <LinkPlaceholder text='activities' url='/events' /> to let our members know what’s happening
+                                    about <LinkPlaceholder text='events and activities' url='/events' target='_self' /> to let our members know what’s happening
                                     with the society!</p>
                             </div>
 
@@ -137,15 +139,15 @@ export default async function Home() {
 
                         <div className='md:basis-1/2 flex justify-center'>
                             <Image
-                                src='/group_photo.jpg'
-                                width={300}
-                                height={300}
+                                src={final_group_photo}
                                 style={{
                                     width: '100%',
                                     height: '100%',
                                 }}
-                                alt="image"
+                                alt="Picture of participants in Intro to Web3"
                                 className="object-contain"
+                                placeholder='blur'
+                                quality={60}
                             />
                         </div>
 

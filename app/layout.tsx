@@ -30,9 +30,10 @@ export default function RootLayout({
 
     <html lang="en">
       <Suspense fallback={<Loading />}>
+        <head>
+        <script src="https://tally.so/widgets/embed.js"></script>
+        </head>
         <body className={inter.className} style={{ overflow: 'hidden' }}>
-
-
           <ScrollTop />
           <Providers>
             <Titlebar />
@@ -47,7 +48,7 @@ export default function RootLayout({
                 >
                   {children}
 
-                  <div className='my-8'>
+                  <div className='my-1'>
                     <Footer />
                   </div>
                 </main>

@@ -17,7 +17,7 @@ const Faq_card = ({ key,question, answer, open }: Props) => {
     }
 
     return (
-        <div className='flex-col border-t border-gray-500'>
+        <div className='m-4 flex-col border-t border-gray-500'>
 
             <div className={`p-4 flex justify-between cursor-pointer ${isOpen ? 'bg-gray-500' : ''}`} onClick={toggle}>
                 <dd className='text-lg font-bold'>
