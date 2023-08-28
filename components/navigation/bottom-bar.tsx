@@ -5,8 +5,8 @@ import CheckIcon from '../icons/CheckIcon';
 import NextjsIcon from '../icons/NextjsIcon';
 import SourceControlIcon from '../icons/SourceControlIcon';
 
-import getIssues, { Issues } from './issues';
-import getCommits, { Commits } from './commits';
+import getIssues, { Issues } from '../../actions/issues';
+import getCommits, { Commits } from '../../actions/commits';
 
 
 const Bottombar = async () => {
