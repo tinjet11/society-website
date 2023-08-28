@@ -22,11 +22,6 @@ export const proximanova = localFont({
 })
 
 
-export const metadata = {
-  title: 'Computer Science Society',
-  description: 'University of Nottingham Malaysia',
-}
-
 export default function RootLayout({
   children,
 }: {
