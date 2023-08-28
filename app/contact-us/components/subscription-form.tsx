@@ -65,7 +65,7 @@ const EmailSubscriptionForm = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="bg-[#E981D9] hover:bg-[#DCA7EE] text-white font-bold py-2 px-4"
+                            className="button"
                         >
                             {loading ? 'Submitting...' : 'Subscribe'}
                         </button>
