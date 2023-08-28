@@ -1,5 +1,4 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { Providers } from './providers';
 import Titlebar from '@/components/navigation/title-bar';
 import Bottombar from '@/components/navigation/bottom-bar';
