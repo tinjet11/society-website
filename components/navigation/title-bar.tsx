@@ -1,4 +1,5 @@
 "use client"
+import { consolas } from '@/app/layout';
 import Image from 'next/image';
 
 export default function Titlebar(){
@@ -8,9 +9,8 @@ export default function Titlebar(){
         }
     }
     return (
-        <nav className='title-bar secondary-bg-color flex h-[30px] w-full items-center px-2 title-bar-text border-b border-[#363451]'>
-            {/* 
-             <section className='top-0 fixed secondary-bg-color flex h-8 w-full items-center px-2 title-bar-text border-b border-[#363451]'> */}
+      <nav className={`${consolas.className} title-bar-text first-letter:title-bar secondary-bg-color flex h-[30px] w-full items-center px-2 border-b border-[#363451]`}>
+      
             <div className="flex gap-x-5 mr-auto">
                 <Image
                     src="/nav/css_dark_icon(1).svg"

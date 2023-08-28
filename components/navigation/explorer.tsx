@@ -7,6 +7,7 @@ import { BlogType, EventType } from '@/types';
 import getBlogs from '@/actions/getBlogs';
 import getEvents from '@/actions/getEvent';
 import ToggleComponent from './toggle-component';
+import { consolas } from '@/app/layout';
 
 export const explorerItems = [
   {
@@ -72,7 +73,7 @@ const Explorer = () => {
   }, []);
 
   return (
-    <div className="bg-[#363451] w-[250px] text-gray-300 font-semibold title-bar-text text-base h-screen hidden md:block border-r-2 border-[#4A4772]">
+    <div className={`${consolas.className}  bg-[#363451] w-[250px] text-gray-300 font-semibold title-bar-text text-base h-screen hidden md:block border-r-2 border-[#4A4772]`}>
       <p className="py-2 px-3 font-light uppercase tracking-wider mb-3">Explorer</p>
 
       <ToggleComponent key={'main'} title={'UNM CSS'} id={"main"}>
@@ -126,7 +127,7 @@ const Explorer = () => {
 
           {yearRanges.map((yearRange, index) => (
             <div key={index} className='ml-5'>
-              <ToggleComponent title={yearRange} id={yearRange + "#"+ index}>
+              <ToggleComponent title={yearRange} id={yearRange + "#" + index}>
                 <div>
                   {blog.filter((blog) => blog.year === yearRange).map((item, index) =>
                   (

@@ -16,7 +16,6 @@ import LinkPlaceholder from "@/components/ui/link-placeholder";
 import SocialMedia from "@/components/ui/social-media";
 import getEvents from '@/actions/getEvent';
 import getBlogs from '@/actions/getBlogs';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
@@ -56,10 +55,7 @@ export default async function Home() {
                         <Link href="/contact-us" key="Collaborate CTA"><button className='button-secondary'>Collaborate with Us</button></Link>
                     </div>
                 </div>
-                {/* 
-                <NoticeBoard />
 
- */}
                 <div className='px-6'>
                     <p className='title-header'>Who are <span className='title'>we</span></p>
 
@@ -144,6 +140,8 @@ export default async function Home() {
                                     width: '100%',
                                     height: '100%',
                                 }}
+                                width={400}
+                                height={400}
                                 alt="Picture of participants in Intro to Web3"
                                 className="object-contain"
                                 placeholder='blur'

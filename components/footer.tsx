@@ -74,8 +74,8 @@ const Footer = () => {
                                 <h3 className='text-xl font-bold mb-3'>Useful links</h3>
 
                                 <ul className='list-disc pl-5'>
-                                    {useful_links.map((item)=>(
-                                        <li className='my-2'><LinkPlaceholder url={item.link} text={item.name} /></li>
+                                    {useful_links.map((item,index)=>(
+                                        <li className='my-2' key={index}><LinkPlaceholder url={item.link} text={item.name} /></li>
                                     ))}
                                 </ul>
 

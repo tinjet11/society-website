@@ -10,9 +10,18 @@ import Footer from '@/components/footer';
 import ScrollTop from '@/components/scroll-top';
 import { Suspense } from 'react';
 import Loading from './loading';
+import localFont from 'next/font/local';
 
+export const consolas = localFont({
+  src: './Consolas.ttf',
+  display: 'swap',
+})
 
-const inter = Inter({ subsets: ['latin'] })
+export const proximanova = localFont({
+  src: './ProximaNova.otf',
+  display: 'swap',
+})
+
 
 export const metadata = {
   title: 'Computer Science Society',
@@ -30,13 +39,13 @@ export default function RootLayout({
 
     <html lang="en">
       <Suspense fallback={<Loading />}>
-        <head>
+{/*         <head>
         <script src="https://tally.so/widgets/embed.js"></script>
-        </head>
-        <body className={inter.className} style={{ overflow: 'hidden' }}>
+        </head> */}
+        <body className={proximanova.className} style={{ overflow: 'hidden' }}>
           <ScrollTop />
           <Providers>
-            <Titlebar />
+                  <Titlebar  />
 
             <div className="flex">
               <NavVertical />

@@ -35,6 +35,8 @@ const   Intro = () => {
                         width: '100%',
                         height: '100%',
                     }}
+                    width={400}
+                    height={400}
                     alt="CSS Group Image"
                     className="object-contain"
                     placeholder="blur"

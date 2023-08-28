@@ -151,36 +151,6 @@ const Events_card = ({ id, title, description, venue, date, imageUrl, link }: Ev
                             </Link>
                         </div>
                     </div>
-                    {/* 
-                    <div className="flex flex-row justify-center w-auto p-4 items-center mt-8 mb-4 rounded-2xl border countdown-big">
-                        <div className="flex items-center">
-                            <span className="text-2xl md:text-3xl font-bold">{days}</span>
-                            <span className="card-subtitle ml-1">
-                                {`Days`}
-                            </span>
-                        </div>
-                        <span className="mx-1 md:mx-2 card-subtitle">:</span>
-                        <div className="flex items-center">
-                            <span className="text-2xl md:text-3xl font-bold">{hours}</span>
-                            <span className="card-subtitle ml-1">
-                                {`Hours`}
-                            </span>
-                        </div>
-                        <span className="mx-1 md:mx-2 card-subtitle">:</span>
-                        <div className="flex items-center">
-                            <span className="text-2xl md:text-3xl font-bold">{minutes}</span>
-                            <span className="card-subtitle ml-1">
-                                {`Minutes`}
-                            </span>
-                        </div>
-                        <span className="mx-1 md:mx-2 card-subtitle">:</span>
-                        <div className="flex items-center">
-                            <span className="text-2xl md:text-3xl font-bold">{seconds}</span>
-                            <span className="card-subtitle ml-1">
-                                {`Seconds`}
-                            </span>
-                        </div>
-                    </div> */}
 
                 </div>
             </div>
