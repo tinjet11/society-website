@@ -15,8 +15,15 @@ import LinkPlaceholder from "@/components/ui/link-placeholder";
 import SocialMedia from "@/components/ui/social-media";
 import getEvents from '@/actions/getEvent';
 import getBlogs from '@/actions/getBlogs';
+import { Metadata } from 'next';
 
 export const revalidate = 0
+
+export const metadata:Metadata = {
+    title: 'Home | UNM Computer Science Society',
+    description:'Explore our latest event and announcement in our official website'
+}
+
 export default async function Home() {
 
     const partners = await getPartners();

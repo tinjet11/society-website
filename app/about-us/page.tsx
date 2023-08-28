@@ -3,9 +3,14 @@ import getPositions from "@/actions/getPosition";
 import CommitteePage from "@/app/about-us/components/Committee";
 import Position from "@/app/about-us/components/Position";
 import getFaqs from "@/actions/getFaqs";
+import { Metadata } from "next";
 
 
 export const revalidate = 0
+export const metadata:Metadata = {
+  title: 'About Us | UNM Computer Science Society',
+  description:'We’re a community of programmers and tech enthusiasts, at the University of Nottingham Malaysia!'
+}
 
 export default async function Home() {
   const committee = await getCommittees();

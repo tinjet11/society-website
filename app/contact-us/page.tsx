@@ -1,8 +1,14 @@
 import getFaqs from "@/actions/getFaqs";
 import LinkPlaceholder from "@/components/ui/link-placeholder";
 import Faq from "./components/faq";
+import { Metadata } from "next";
 
 export const revalidate = 0
+
+export const metadata:Metadata = {
+  title: 'Contact Us | UNM Computer Science Society',
+  description:'We are open to collaboration & sponsorship. Feel free to connect with us'
+}
 
 export default async function Home() {
   const faq = await getFaqs();
