@@ -57,7 +57,7 @@ export default async function Home() {
                 </div>
 
                 <div className='px-6'>
-                    <p className='title-header'>Who are <span className='title'>we</span></p>
+                    <h1 className='title-header'>Who are <span className='title'>we</span></h1>
 
                     <Intro />
 
@@ -65,20 +65,20 @@ export default async function Home() {
 
 
                 <div className='px-6'>
-                    <p className='title-header'>What's <span className='title'>happening?</span></p>
+                    <h1 className='title-header'>What's <span className='title'>happening?</span></h1>
                     <Happening />
 
                 </div>
 
                 <div className='px-6'>
-                    <p className='title-header'>Our Upcoming <span className='title'>Events</span></p>
+                    <h1 className='title-header'>Our Upcoming <span className='title'>Events</span></h1>
 
                     <UpcomingEvent data={event} />
                 </div>
 
 
                 <div className='px-6'>
-                    <p className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></p>
+                    <h1 className='title-header'>Our <span className='title'>partners</span> and <span className='text-[#E981D9]'>Collaborators!</span></h1>
 
                     <Partners data={partners} />
                 </div>
