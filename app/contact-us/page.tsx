@@ -1,6 +1,7 @@
 import getFaqs from "@/actions/getFaqs";
 import LinkPlaceholder from "@/components/ui/link-placeholder";
 import Faq from "./components/faq";
+import { Metadata } from "next";
 
 export const revalidate = 0
 
