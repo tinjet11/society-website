@@ -16,6 +16,12 @@ module.exports = {
       height: {
         "85v": "85vh"
       },
+      extend: {
+        fontFamily: {
+          sans: ['var(--font-proxima-nova)']
+        }
+    
+      }
     },
   },
   plugins: [],
