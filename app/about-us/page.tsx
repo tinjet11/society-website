@@ -18,16 +18,7 @@ export default async function Home() {
   return (
     <>
       <div className='container flex-col'>
-        <div className="pl-6">
-          <h1 id="team" className='title-header '>Meet our <span className="title">Team</span></h1>
-          <CommitteePage data={committee} />
-        </div>
-        <div className="pl-6">
-          <h1 className='title-header'>Open <span className="title">Positions!</span></h1>
-          <Position data={position} />
-        </div>
-
-        <div className='px-6'>
+      <div className='px-6'>
           <h1 className='title-header'>Our <span className="title">Mission</span> and <span className='text-[#E981D9]'>Vision</span></h1>
           <p>
             CSS has focused towards a technical approach in improving the Computer Science student life. Provided through workshops, talks and industrial trips with various collaborations, CSS proved to be a society where computer science students could enhance their knowledge and insight within the realm of computer science.
@@ -43,6 +34,17 @@ export default async function Home() {
             technical talks and workshops, CSS would focus on building a community through hosting society projects and activities. A community with the love and passion for everything computer science.
           </p>
         </div>
+
+        <div className="pl-6">
+          <h1 id="team" className='title-header '>Meet our <span className="title">Team</span></h1>
+          <CommitteePage data={committee} />
+        </div>
+        <div className="pl-6">
+          <h1 className='title-header'>Open <span className="title">Positions!</span></h1>
+          <Position data={position} />
+        </div>
+
+        
 
 
       </div>

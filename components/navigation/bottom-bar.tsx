@@ -5,12 +5,19 @@ import CheckIcon from '../icons/CheckIcon';
 import NextjsIcon from '../icons/NextjsIcon';
 import SourceControlIcon from '../icons/SourceControlIcon';
 
-const Bottombar = () => {
+import getIssues, { Issues } from './issues';
+import getCommits, { Commits } from './commits';
+
+
+const Bottombar = async () => {
+  let issuesJson: Issues = JSON.parse(JSON.stringify(await getIssues())) 
+  let commitJson: Issues = JSON.parse(JSON.stringify(await getCommits())) 
+
   return (
     <footer className="w-full fixed bottom-0 flex justify-between text-xs h-[25px] secondary-bg-color">
       <div className="flex items-center">
         <a
-          href="https://github.com/itsnitinr/vscode-portfolio"
+          href="https://github.com/UoN-Computer-Science-Society/society-website"
           target="_blank"
           rel="noreferrer noopener"
           className="flex mr-1 h-4 items-center px-1"
@@ -20,9 +27,9 @@ const Bottombar = () => {
         </a>
         <div className="flex mr-1 h-4 items-center px-1">
           <ErrorIcon className="mr-2" />
-          <p>0</p>&nbsp;&nbsp;
+          <p>{issuesJson.length}</p>&nbsp;&nbsp;
           <WarningIcon className="mr-2" />
-          <p>0</p>
+          <p>{commitJson.length}</p>
         </div>
       </div>
       <div className="flex items-center">

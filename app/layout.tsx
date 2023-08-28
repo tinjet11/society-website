@@ -13,13 +13,34 @@ import localFont from 'next/font/local';
 import Head from 'next/head';
 
 export const consolas = localFont({
-  src: './Consolas.ttf',
-  display: 'swap',
+  src: '../public/fonts/Consola.ttf',
+  display: 'swap'
 })
 
 export const proximanova = localFont({
-  src: './ProximaNova.otf',
-  display: 'swap',
+  src:[
+    {
+      path: '../public/fonts/Proxima Nova Thin.otf',
+      weight:'100'
+    },
+    {
+      path: '../public/fonts/Proxima Nova Regular.otf',
+      weight:'400'
+    },
+    {
+      path:'../public/fonts/Proxima Nova Bold.otf',
+      weight:'700'
+    },
+    {
+      path:'../public/fonts/Proxima Nova Extrabold.otf',
+      weight:'800'
+    },
+    {
+      path:'../public/fonts/Proxima Nova Black.otf',
+      weight:'900'
+    }
+  ],
+  variable: '--font-proxima-nova'
 })
 
 
@@ -32,15 +53,12 @@ export default function RootLayout({
 
   return (
 
-    <html lang="en">
+    <html lang="en" >
       <Suspense fallback={<Loading />}>
-{/*         <head>
-        <script src="https://tally.so/widgets/embed.js"></script>
-        </head> */}
         <Head>
         <meta property="og:image" content="/public/opengraph-CSS_dark copy.png"></meta>
         </Head>
-        <body className={proximanova.className} style={{ overflow: 'hidden' }}>
+        <body className={`${proximanova.className} font-normal`} style={{ overflow: 'hidden' }}>
           <ScrollTop />
           <Providers>
                   <Titlebar  />
