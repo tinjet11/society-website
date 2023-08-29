@@ -18,26 +18,26 @@ export const consolas = localFont({
 })
 
 export const proximanova = localFont({
-  src:[
+  src: [
     {
       path: '../public/fonts/Proxima Nova Thin.otf',
-      weight:'100'
+      weight: '100'
     },
     {
       path: '../public/fonts/Proxima Nova Regular.otf',
-      weight:'400'
+      weight: '400'
     },
     {
-      path:'../public/fonts/Proxima Nova Bold.otf',
-      weight:'700'
+      path: '../public/fonts/Proxima Nova Bold.otf',
+      weight: '700'
     },
     {
-      path:'../public/fonts/Proxima Nova Extrabold.otf',
-      weight:'800'
+      path: '../public/fonts/Proxima Nova Extrabold.otf',
+      weight: '800'
     },
     {
-      path:'../public/fonts/Proxima Nova Black.otf',
-      weight:'900'
+      path: '../public/fonts/Proxima Nova Black.otf',
+      weight: '900'
     }
   ],
   variable: '--font-proxima-nova'
@@ -56,12 +56,17 @@ export default function RootLayout({
     <html lang="en" >
       <Suspense fallback={<Loading />}>
         <Head>
-        <meta property="og:image" content="/public/opengraph-CSS_dark copy.png"></meta>
+          <meta name="og:title" content="Computer Science Society" />
+          <meta name="og:description" content="Under Student Association of University of Nottingham Malaysia" />
+          <meta
+            name="og:image"
+            content="https://res.cloudinary.com/doeirqkwt/image/upload/v1693272421/ws55bojchfzgngcfl69s.png"
+          />
         </Head>
         <body className={`${proximanova.className} font-normal`} style={{ overflow: 'hidden' }}>
           <ScrollTop />
           <Providers>
-                  <Titlebar  />
+            <Titlebar />
 
             <div className="flex">
               <NavVertical />
