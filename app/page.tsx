@@ -18,12 +18,13 @@ import getEvents from '@/actions/getEvent';
 import getBlogs from '@/actions/getBlogs';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import Head from 'next/head';
 
 export const revalidate = 0
 
-export const metadata:Metadata = {
+export const metadata: Metadata = {
     title: 'Home | UNM Computer Science Society',
-    description:'Explore our latest events and announcements in our official website'
+    description: 'Explore our latest events and announcements in our official website'
 }
 
 export default async function Home() {
@@ -31,8 +32,16 @@ export default async function Home() {
     const event = await getEvents();
     const blogs = await getBlogs();
     return (
-            
+
         <>
+            <Head>
+                <meta name="og:title" content="Computer Science Society" />
+                <meta name="og:description" content="Under Student Association of University of Nottingham Malaysia" />
+                <meta
+                    name="og:image"
+                    content= "https://res.cloudinary.com/doeirqkwt/image/upload/v1693272421/ws55bojchfzgngcfl69s.png"
+                />
+            </Head>
             <Marquee speed={30}>
                 <NoticeBoard />
             </Marquee>
