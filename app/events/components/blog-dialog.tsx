@@ -3,9 +3,10 @@ import { Dialog } from '@headlessui/react'
 import { X } from 'lucide-react'
 import React, { useState } from 'react'
 import GalleryPage from '../../../components/gallery';
-import Balancer from 'react-wrap-balancer';
+
 import { BlogType } from '@/types';
-import format from 'date-fns/format'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from "remark-gfm";
 
 interface Props {
     isOpen: boolean,
@@ -14,7 +15,7 @@ interface Props {
 }
 
 
-const BlogDialog = ({ isOpen, setIsOpen,data }: Props) => {
+const BlogDialog = ({ isOpen, setIsOpen, data }: Props) => {
 
     return (
         <>
@@ -41,14 +42,13 @@ const BlogDialog = ({ isOpen, setIsOpen,data }: Props) => {
                                 </button>
                             </div>
 
-                            <GalleryPage imageData ={data.images} />
+                            <GalleryPage imageData={data.images} />
 
                             <Dialog.Title className='text-3xl font-bold mb-3 text-black'>{data.title}</Dialog.Title>
                             <p className='text-sm text-black mb-3'>{data.venue}</p>
                             <p className='text-sm text-black mb-3 '>Date: {new Date(data.date).toLocaleString()}</p>
 
-                            <p className='text-base' dangerouslySetInnerHTML={{ __html: data.content }} />
-
+                            <ReactMarkdown children={data.content}/>
                         </Dialog.Panel>
                     </div>
                 </div>
