@@ -10,7 +10,6 @@ import ScrollTop from '@/components/scroll-top';
 import { Suspense } from 'react';
 import Loading from './loading';
 import localFont from 'next/font/local';
-import Head from 'next/head';
 
 export const consolas = localFont({
   src: '../public/fonts/Consola.ttf',
@@ -55,14 +54,6 @@ export default function RootLayout({
 
     <html lang="en" >
       <Suspense fallback={<Loading />}>
-        <Head>
-          <meta name="og:title" content="Computer Science Society" />
-          <meta name="og:description" content="Under Student Association of University of Nottingham Malaysia" />
-          <meta
-            name="og:image"
-            content="https://res.cloudinary.com/doeirqkwt/image/upload/v1693272421/ws55bojchfzgngcfl69s.png"
-          />
-        </Head>
         <body className={`${proximanova.className} font-normal`} style={{ overflow: 'hidden' }}>
           <ScrollTop />
           <Providers>
