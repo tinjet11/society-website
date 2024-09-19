@@ -9,35 +9,6 @@ interface Props{
 
 const UpcomingEvent = ({data}: Props) => {
 
-/*     const [isLoading, setIsLoading] = useState(true);
-    const [event, setEvent] = useState<EventType[]>([])
-    const [isMounted, setIsMounted] = useState(false);
-
-    const pathname = usePathname();
-
-    useEffect(() => {
-        const fetchEvents = async () => {
-            setIsLoading(true);
-            const events = await getEvents();
-            setEvent(events);
-            setIsLoading(false);
-        };
-        fetchEvents();
-
-    }, []);
-
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    //prevent hydration error
-    if (!isMounted) {
-        return null;
-    }
- */
-
-
     return (
                 <>
                     {data && data.map((event) => (
@@ -50,6 +21,7 @@ const UpcomingEvent = ({data}: Props) => {
                                 venue={event.venue}
                                 imageUrl={event.imageUrl}
                                 link={event.link}
+                                eventContentId={event.eventContentId}
                             />
                         </React.Fragment>
                     ))}

@@ -16,10 +16,7 @@ const Verification = () => {
         const secret = params.get('secret');
         setLoading(true);
         
-        console.log("userId: " + userId)
-        console.log("secret: " + secret)
         const client = new Client();
-
         const account = new Account(client);
 
         client

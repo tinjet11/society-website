@@ -38,7 +38,16 @@ export interface EventType {
     venue: string
     imageUrl: string
     link: string
+    eventContentId: string,
 }
+
+export interface EventContentType  {
+    id: string;
+    content: string;
+    eventId: string;
+    createdAt: Date;
+    updatedAt: Date;
+  };
 
 export interface EventDescriptionTitleType {
     id: string,
